@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <title>UwU</title>
+    <style>
+        .playerDIV{
+            height: 15rem;
+        }
+    </style>
 </head>
 <body>
     <div class="container-fluid mt-4">
@@ -16,11 +21,28 @@
         <hr>
         <div class="d-flex flex-column flex-nowrap align-items-center">
             <!-- First Player -->
-            <p id="player" class=""> 1st Player </p>
+            <div id="player" class="d-flex align-items-center playerDIV">
+                <p style="padding-block:auto;"> 1st Player </p>
+            </div>
             <!-- Form Input -->
-            .
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="player_name" placeholder="New Player">
+                <label for="floatingInput">New Player</label>
+            </div>
             <!-- Button -->
+            <div class="">
+                <button style="width: 12rem;" class="btn btn-primary btn-block">Add player</button>
+                <button style="width: 12rem;"class="btn btn-primary btn-block">Play</button>
+            </div>
             <!-- Player List -->
+            <div id="playerlist" class="pt-4">
+                <p style="margin: 0;">Player List</p>
+                <ul>
+                    <li>Bejo</li>
+                    <li>Bejo</li>
+                    <li>Bejo</li>
+                </ul>
+            </div>
         </div>
 
     </div>
