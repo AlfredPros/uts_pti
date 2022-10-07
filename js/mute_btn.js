@@ -1,12 +1,7 @@
 let mute_btn = document.getElementById("mute");
 let track = document.getElementById("background_music");
 
-track.autoplay = true;
-track.loop = true;
-track.load();
-
 //mute_btn.addEventListener("click", mute_func);
-
 function mute_func() {
     dir = mute_btn.src;
 
