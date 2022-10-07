@@ -1,0 +1,28 @@
+#judul {font-family: " Aller";
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    opacity: 2.0;
+}
+
+#player-turn{font-family: " Aller";
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    opacity: 2.0;
+}
+
+p{font-family: " Aller";
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    opacity: 2.0;
+}
+
+li{font-family: " Aller";
+    color: white;
+    text-shadow: 3px 3px 3px black;
+    opacity: 2.0;
+}
+
+hr{
+    color: white;
+    opacity: 1.0;
+}
