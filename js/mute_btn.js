@@ -18,10 +18,12 @@ function mute_func() {
     if (dir[dir.length - 1] == "unmuted.png") {
         path = path + "muted.png"
         mute_btn.src = path;
+        mute = true;
     }
     else if (dir[dir.length - 1] == "muted.png") {
         path = path + "unmuted.png"
         mute_btn.src = path;
+        mute = false;
     }
     else alert("Error occured!");
 }
