@@ -105,7 +105,7 @@
         var seconds = 9;
         var miliSeconds = 99;
         var playerTurn = 1;
-        var playerCount = 4; //Ubah player-count sesuai jumlah player
+        var playerCount = players.length; //Ubah player-count sesuai jumlah player
 
         //On document ready
         $(document).ready(function () {
@@ -121,8 +121,8 @@
                     if(seconds < 0){
                         seconds = 9;
                         playerTurn++;
-                        if(playerTurn > playerCount){
-                            playerTurn = 1;
+                        if(playerTurn == playerCount){
+                            playerTurn = 0;
                         }
                     }
                 }
@@ -131,7 +131,7 @@
                 //console.log(playerTurn);
 
                 //update the user interface
-                $("#player-turn").html(playerTurn);
+                $("#player-turn").html(players[playerTurn].name);
                 if (seconds < 10) {
                     if (miliSeconds < 10) {
                         $("#timer").html("0" + seconds + ":0" + miliSeconds);
