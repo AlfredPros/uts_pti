@@ -3,7 +3,7 @@ let mute = false;
 
 let mute_btn = document.getElementById("mute");
 
-mute_btn.addEventListener("click", mute_func);
+//mute_btn.addEventListener("click", mute_func);
 
 function mute_func() {
     dir = mute_btn.src;
@@ -18,10 +18,12 @@ function mute_func() {
     if (dir[dir.length - 1] == "unmuted.png") {
         path = path + "muted.png"
         mute_btn.src = path;
+        mute = true;
     }
     else if (dir[dir.length - 1] == "muted.png") {
         path = path + "unmuted.png"
         mute_btn.src = path;
+        mute = false;
     }
     else alert("Error occured!");
 }
