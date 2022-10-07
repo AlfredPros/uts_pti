@@ -6,9 +6,9 @@ function mute_func() {
     dir = mute_btn.src;
 
     dir = dir.split("/");
-    
+
     path = "";
-    for (i=0; i<dir.length - 1; i++) {
+    for (i = 0; i < dir.length - 1; i++) {
         path = path + dir[i] + "/";
     }
 
@@ -16,11 +16,9 @@ function mute_func() {
         path = path + "muted.png"
         mute_btn.src = path;
         track.muted = true;
-    }
-    else if (dir[dir.length - 1] == "muted.png") {
+    } else if (dir[dir.length - 1] == "muted.png") {
         path = path + "unmuted.png"
         mute_btn.src = path;
         track.muted = false;
-    }
-    else alert("Error occured!");
+    } else alert("Error occured!");
 }

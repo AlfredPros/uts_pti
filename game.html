@@ -13,22 +13,23 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Style.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="Style.css" />
     <style>
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3)), url(./resources/cosmic.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-blend-mode: darken;
+            height: 100%;
 
-    body{
-        background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.3)), url(./resources/cosmic.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-blend-mode: darken;
-        height: 100%;
-
-    }
-    
+        }
     </style>
 </head>
 
@@ -105,14 +106,15 @@
             </div>
 
             <div class="col text-end">
-                <img src="resources/unmuted.png" style="width:12%" id="mute" onclick="mute_func()"/>
+                <img src="resources/unmuted.png" style="width:12%" id="mute" onclick="mute_func()" />
                 <audio src="resources/background_music.mp3" id="background_music" autoplay loop>Audio</audio>
             </div>
-        </div> 
+        </div>
     </div>
-    
+
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -120,7 +122,8 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    [player_name] has been moved out from the game for causing a ruckus. You can proceed without them or start a new game.
+                    [player_name] has been moved out from the game for causing a ruckus. You can proceed without them or
+                    start a new game.
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Continue</button>
@@ -135,11 +138,11 @@
         let myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
         myModal.show();
     </script>
-	
+
     <script>
         players = JSON.parse(sessionStorage.getItem("players"));
         console.log(players);
-        
+
         var seconds = 9;
         var miliSeconds = 99;
         var playerTurn = 0;
@@ -149,22 +152,22 @@
         $(document).ready(function () {
 
             //set a function to run every 1 second
-            setInterval(function(){
+            setInterval(function () {
 
                 //update timer and turn variables
                 miliSeconds--;
                 if (miliSeconds < 0) {
                     miliSeconds = 99;
                     seconds--;
-                    if(seconds < 0){
+                    if (seconds < 0) {
                         seconds = 9;
                         playerTurn++;
-                        if(playerTurn == playerCount){
+                        if (playerTurn == playerCount) {
                             playerTurn = 0;
                         }
                     }
                 }
-                
+
                 //console.log(seconds + " " + miliSeconds);
                 //console.log(playerTurn);
 
@@ -187,7 +190,7 @@
             }, 10);
 
         })
-        </script>
+    </script>
 
     <script type="text/javascript" src="js/mute_btn.js"></script>
 </body>
