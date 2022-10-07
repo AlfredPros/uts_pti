@@ -3,7 +3,7 @@ let mute = false;
 
 let mute_btn = document.getElementById("mute");
 
-mute_btn.addEventListener("click", mute_func);
+//mute_btn.addEventListener("click", mute_func);
 
 function mute_func() {
     dir = mute_btn.src;
