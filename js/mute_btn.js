@@ -1,7 +1,9 @@
-
-let mute = false;
-
 let mute_btn = document.getElementById("mute");
+let track = document.getElementById("background_music");
+
+track.autoplay = true;
+track.loop = true;
+track.load();
 
 //mute_btn.addEventListener("click", mute_func);
 
@@ -18,12 +20,12 @@ function mute_func() {
     if (dir[dir.length - 1] == "unmuted.png") {
         path = path + "muted.png"
         mute_btn.src = path;
-        mute = true;
+        track.muted = true;
     }
     else if (dir[dir.length - 1] == "muted.png") {
         path = path + "unmuted.png"
         mute_btn.src = path;
-        mute = false;
+        track.muted = false;
     }
     else alert("Error occured!");
 }
