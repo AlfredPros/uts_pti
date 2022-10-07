@@ -13,42 +13,6 @@
     </script>
     <script src="https://code.jquery.com/jquery-3.6.1.js"
         integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script>
-        //Timer
-        var minutes = 0;
-        var seconds = 0;
-
-        //On document ready
-        $(document).ready(function () {
-
-            //set a function to update the timer every 1 second
-            setInterval(function () {
-                //increment the time variables
-                seconds++;
-                if (seconds > 59) {
-                    seconds = 0;
-                    minutes++;
-                }
-                //debug
-                console.log(minutes + " " + seconds);
-                //update the user interface
-                if (minutes < 10) {
-                    if (seconds < 10) {
-                        $("#timer").html("0" + minutes + ":0" + seconds);
-                    } else {
-                        $("#timer").html("0" + minutes + ":" + seconds);
-                    }
-                } else {
-                    if (seconds < 10) {
-                        $("#timer").html(minutes + ":0" + seconds);
-                    } else {
-                        $("#timer").html(minutes + ":" + seconds);
-                    }
-                }
-            }, 1000);
-
-        })
-    </script>
 </head>
 
 <body>
@@ -130,6 +94,40 @@
     </div>
     <script>
         players = JSON.parse(sessionStorage.getItem("players"));
+        //Timer
+        var minutes = 0;
+        var seconds = 0;
+
+        //On document ready
+        $(document).ready(function () {
+
+            //set a function to update the timer every 1 second
+            setInterval(function () {
+                //increment the time variables
+                seconds++;
+                if (seconds > 59) {
+                    seconds = 0;
+                    minutes++;
+                }
+                //debug
+                console.log(minutes + " " + seconds);
+                //update the user interface
+                if (minutes < 10) {
+                    if (seconds < 10) {
+                        $("#timer").html("0" + minutes + ":0" + seconds);
+                    } else {
+                        $("#timer").html("0" + minutes + ":" + seconds);
+                    }
+                } else {
+                    if (seconds < 10) {
+                        $("#timer").html(minutes + ":0" + seconds);
+                    } else {
+                        $("#timer").html(minutes + ":" + seconds);
+                    }
+                }
+            }, 1000);
+
+        })
     </script>
 </body>
 
