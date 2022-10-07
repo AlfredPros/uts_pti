@@ -88,48 +88,89 @@
             </div>
 
             <div class="col text-end">
-                <img src="resources/unmuted.png" style="width:12%" id="mute" />
-                <embed src="" loop="true" autostart="true" />
+                <img src="resources/unmuted.png" style="width:12%" id="mute" onclick="mute_func()"/>
+                <embed src="resources/background_music.mp3" loop="true" autostart="true" width="2" height="0">
+            </div>
+        </div> 
+    </div>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
             </div>
         </div>
     </div>
     <script>
+        let myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
+        myModal.show();
+    </script>
+	
+    <script>
         players = JSON.parse(sessionStorage.getItem("players"));
-        //Timer
-        var minutes = 0;
-        var seconds = 0;
+        console.log(players);
+        
+        var seconds = 9;
+        var miliSeconds = 99;
+        var playerTurn = 0;
+        var playerCount = players.length; //Ubah player-count sesuai jumlah player
 
         //On document ready
         $(document).ready(function () {
 
-            //set a function to update the timer every 1 second
-            setInterval(function () {
-                //increment the time variables
-                seconds++;
-                if (seconds > 59) {
-                    seconds = 0;
-                    minutes++;
+            //set a function to run every 1 second
+            setInterval(function(){
+
+                //update timer and turn variables
+                miliSeconds--;
+                if (miliSeconds < 0) {
+                    miliSeconds = 99;
+                    seconds--;
+                    if(seconds < 0){
+                        seconds = 9;
+                        playerTurn++;
+                        if(playerTurn == playerCount){
+                            playerTurn = 0;
+                        }
+                    }
                 }
-                //debug
-                console.log(minutes + " " + seconds);
+                
+                //console.log(seconds + " " + miliSeconds);
+                //console.log(playerTurn);
+
                 //update the user interface
-                if (minutes < 10) {
-                    if (seconds < 10) {
-                        $("#timer").html("0" + minutes + ":0" + seconds);
+                $("#player-turn").html(players[playerTurn].name);
+                if (seconds < 10) {
+                    if (miliSeconds < 10) {
+                        $("#timer").html("0" + seconds + ":0" + miliSeconds);
                     } else {
-                        $("#timer").html("0" + minutes + ":" + seconds);
+                        $("#timer").html("0" + seconds + ":" + miliSeconds);
                     }
                 } else {
-                    if (seconds < 10) {
-                        $("#timer").html(minutes + ":0" + seconds);
+                    if (miliSeconds < 10) {
+                        $("#timer").html(seconds + ":0" + miliSeconds);
                     } else {
-                        $("#timer").html(minutes + ":" + seconds);
+                        $("#timer").html(seconds + ":" + miliSeconds);
                     }
                 }
-            }, 1000);
+
+            }, 10);
 
         })
-    </script>
+        </script>
+
+    <script type="text/javascript" src="js/mute_btn.js"></script>
 </body>
 
 </html>
