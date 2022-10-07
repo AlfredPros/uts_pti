@@ -9,38 +9,51 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script>
-        //Timer
-        var minutes = 0;
-        var seconds = 0;
+        var seconds = 9;
+        var miliSeconds = 99;
+        var playerTurn = 1;
+        var playerCount = 4; //Ubah player-count sesuai jumlah player
 
         //On document ready
         $(document).ready(function(){
 
-            //set a function to update the timer every 1 second
+            //set a function to run every 1 second
             setInterval(function(){
-                //increment the time variables
-                seconds++;
-                if (seconds > 59) {
-                    seconds = 0;
-                    minutes++;
+
+                //update timer and turn variables
+                miliSeconds--;
+                if (miliSeconds < 0) {
+                    miliSeconds = 99;
+                    seconds--;
+                    if(seconds < 0){
+                        seconds = 9;
+                        playerTurn++;
+                        if(playerTurn > playerCount){
+                            playerTurn = 1;
+                        }
+                    }
                 }
-                //debug
-                console.log(minutes + " " + seconds);
+                
+                //console.log(seconds + " " + miliSeconds);
+                //console.log(playerTurn);
+
                 //update the user interface
-                if (minutes < 10) {
-                    if (seconds < 10) {
-                        $("#timer").html("0" + minutes + ":0" + seconds);
+                $("#player-turn").html(playerTurn);
+                if (seconds < 10) {
+                    if (miliSeconds < 10) {
+                        $("#timer").html("0" + seconds + ":0" + miliSeconds);
                     } else {
-                        $("#timer").html("0" + minutes + ":" + seconds);
+                        $("#timer").html("0" + seconds + ":" + miliSeconds);
                     }
                 } else {
-                    if (seconds < 10) {
-                        $("#timer").html(minutes + ":0" + seconds);
+                    if (miliSeconds < 10) {
+                        $("#timer").html(seconds + ":0" + miliSeconds);
                     } else {
-                        $("#timer").html(minutes + ":" + seconds);
+                        $("#timer").html(seconds + ":" + miliSeconds);
                     }
                 }
-            }, 1000);
+
+            }, 10);
 
         })
     </script>
@@ -67,8 +80,8 @@
     <div class="container">
         <div class="row">
             <div class="col text-start">
-                <p>Turns: <span id="player-turn">1</span></p>
-                <p>Timer: <span id="timer">00:00</span></p>
+                <p>Turn     : <span id="player-turn">1</span></p>
+                <p>Timer    : <span id="timer">00:00</span></p>
             </div>
             
 
