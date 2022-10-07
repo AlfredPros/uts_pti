@@ -20,3 +20,14 @@ Aturan Permainan (gameplay yang diterapkan pada aplikasi)
 8. Ketika sebuah player membangunkan SPIKE, maka player akan kalah dan tidak bermain, serta namanya dicoret.
 9. Permainan selesai ketika tersisa satu player.
 
+
+Detail Game:
+1. Untuk masuk game minimal 2 user, maksimal 5 user.
+2. Setiap player, maka akan dibuat 4 tulang.
+3. Setiap 4 tulang, terdapat 1 tulang yang dapat membangunkan SPIKE
+4. Waktu setiap giliran adalah 10 detik
+5. Saat salah satu player kalah, bisa mengulang gamenya atau meneruskan gamenya tanpa orang yang kalah sebelumnya.
+6. Jika player menang, maka akan didisplay nama dan teks menang, juga SFX confetti.
+7. Saat player klik tulang yang normal, akan selalu memainkan SFX.
+8. Jika player klik tulang yang dapat membangunkan SPIKE, memainkan SFX anjing gonggong dan SPIKE akan membesar.
+9. Memainkan BGM saat memainkan game atau di home.
