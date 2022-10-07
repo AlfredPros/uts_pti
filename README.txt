@@ -33,9 +33,9 @@ Detail Game:
 9. Memainkan BGM saat memainkan game atau di home.
 
 Pembagian Tugas:
-Alexander Michael Nugroho   : CSS
-Alfred Kuhlman              : UI (Page 2)
-Gregorius Lai               : JS / JQuery
-Loysing Ryono Ismanto		: UI (Page 1)
-
+Alexander Michael Nugroho   : Styling CSS 
+Alfred Kuhlman              : UI (Page 2), mute button, dan modal
+Christian					: JS untuk timer dan ronde permainan
+Gregorius Lai               : JS tabel permainan
+Loysing Ryono Ismanto		: UI (Page 1), JSON transfer
 
