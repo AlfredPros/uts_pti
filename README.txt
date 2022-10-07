@@ -31,3 +31,11 @@ Detail Game:
 7. Saat player klik tulang yang normal, akan selalu memainkan SFX.
 8. Jika player klik tulang yang dapat membangunkan SPIKE, memainkan SFX anjing gonggong dan SPIKE akan membesar.
 9. Memainkan BGM saat memainkan game atau di home.
+
+Pembagian Tugas:
+Alexander Michael Nugroho   : CSS
+Alfred Kuhlman              : UI (Page 2)
+Gregorius Lai               : JS / JQuery
+Loysing Ryono Ismanto		: UI (Page 1)
+
+
