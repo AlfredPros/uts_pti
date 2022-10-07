@@ -50,6 +50,16 @@
 
         $("#addPlayerButton").click(function () {
             player_name = $("#playerInput").val();
+            if (player_name.length < 1) {
+                alert("Please Input Name");
+                return;
+            }
+            for (let i = 0; i < players.length; i++) {
+                if (players[i].name == player_name) {
+                    alert("Player already exists");
+                    return;
+                }
+            }
             var player = {
                 name: player_name,
                 play_status: true
@@ -60,8 +70,8 @@
         })
 
         function showPlayerList() {
+            $("#playerList").empty();
             for (let i = 0; i < players.length; i++) {
-
                 $("#playerList").append("<li>" + players[i].name + "</li>");
             }
         }
