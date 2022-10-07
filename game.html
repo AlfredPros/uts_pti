@@ -45,7 +45,6 @@
             <div class="col text-center justify-content-center">
                 <table>
                     <tbody id="game-content">
-                        <script>bone()</script>
                         <!-- <tr>
                             <th style="width: 16.67%"></th>
                             <th style="width: 16.67%"><img src="resources/bone.png" style="width:100%" /></th>
@@ -116,9 +115,7 @@
     <script>
         let myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
         myModal.show();
-    </script>
-	
-    <script>
+
         players = JSON.parse(sessionStorage.getItem("players"));
         //Timer
         var minutes = 0;
@@ -130,6 +127,7 @@
         function bone(){
             for(var i = 0; i < JumlahPlayer; i++){
                 document.getElementById("game-content").innerHTML = "<tr>";
+
                 for(var j = 0; j < i; j++){
                     if(i == 0 &&  j == 0){
                         document.getElementById("game-content").innerHTML = '"<th style="width: 16.67%"></th>"';
@@ -161,13 +159,13 @@
                     if(i == (JumlahPlayer - 1) && j == i){
                         document.getElementById("game-content").innerHTML = '<td></td>';
                     }
-
-                    
                 }
             }
         }
 
         console.log(players);
+
+        bone();
         
         var seconds = 9;
         var miliSeconds = 99;
@@ -216,7 +214,7 @@
             }, 10);
 
         })
-        </script>
+    </script>
 
     <script type="text/javascript" src="js/mute_btn.js"></script>
 </body>
