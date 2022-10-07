@@ -53,12 +53,12 @@
                             <td> <img src="resources/bone.png" style="width:100%"/> </td>
                         </tr>
                         <tr>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
+                            <!-- <td> <img src="resources/bone.png" style="width:100%"/> </td> -->
+                            <!-- <td> <img src="resources/bone.png" style="width:100%"/> </td> -->
                         </tr>
                         <tr>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
+                            <!-- <td> <img src="resources/bone.png" style="width:100%"/> </td> -->
+                            <!-- <td> <img src="resources/bone.png" style="width:100%"/> </td> -->
                         </tr>
                         <tr>
                             <td> <img src="resources/bone.png" style="width:100%"/> </td>
@@ -85,6 +85,52 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        
+
+        function bone(){
+            for(var i = 0; i < JumlahPlayer; i++){
+                document.getElementById("game-content").innerHTML = "<tr>";
+                for(var j = 0; j < i; j++){
+                    if(i == 0 &&  j == 0){
+                        document.getElementById("game-content").innerHTML = '"<th style="width: 16.67%"></th>"';
+                    }
+                    if(i == 0){
+                        document.getElementById("game-content").innerHTML = '<th style="width: 16.67%"><img src="resources/bone.png" style="width:100%"/></th>';
+                    }
+                    if(j == i){
+                        document.getElementById("game-content").innerHTML = "</tr>";
+                    }
+                    if(i == 1){
+                        document.getElementById("game-content").innerHTML = '<td> <img src="resources/bone.png" style="width:100%"/> </td>';
+                    }
+                    if(i == 1 && j == 1){
+                        document.getElementById("game-content").innerHTML = '<td colspan="4" rowspan="4"> <img src="resources/spike-sleep.png" style="width:100%"/> </td>';
+                    }
+                    if(i == 2 && i == 3 && i == 4){
+                        document.getElementById("game-content").innerHTML = '<td> <img src="resources/bone.png" style="width:100%"/> </td>';
+                    }
+
+                    if(i == (JumlahPlayer - 1)){
+                        document.getElementById("game-content").innerHTML = '<td> <img src="resources/bone.png" style="width:100%"/> </td>';
+                    }
+
+                    if(i == (JumlahPlayer - 1) && j == 0){
+                        document.getElementById("game-content").innerHTML = '<td></td>';
+                    }
+
+                    if(i == (JumlahPlayer - 1) && j == i){
+                        document.getElementById("game-content").innerHTML = '<td></td>';
+                    }
+
+                    
+                }
+            }
+        }
+
+    </script>
 
 </body>
 </html>
