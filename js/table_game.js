@@ -74,15 +74,17 @@ for (let i = 0; i < 4 * num; i++) {
 
 function dangerous_boners_selected() {
 
-    // Timer stopped, Doge expands, modal shows, hide bone
+    // Timer stopped, show 00:00
     timerToggle = 0;
-    seconds = 0;
-    miliSeconds = 0;
+    $("#timer").html("00:00");
+    document.getElementById("timer").style.color = "#ff0000";
 
+    //Doge expands, hide bone
     let doge = document.getElementById("dog");
     doge.style = "width:100%; transition: 0.5s ease-in-out; transform: scale(2.5);";
 
-    myModal.show();
+    //KickCurrentPlayer
+    KickCurrentPlayer();
 }
 
 function safer_boners_selected() {

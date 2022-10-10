@@ -87,7 +87,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <span id="ply_name">[player_name] has been moved out from the game for causing a ruckus. You can proceed without them or start a new game.</span>
+                    <span id="ply_name"> [player_name] has been moved out from the game for causing a ruckus. You can proceed without them or start a new game.</span>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="continue">Continue</button>
@@ -105,21 +105,21 @@
         continue_btn.addEventListener("click", continue_func);
 
         function continue_func() {
+            //reset and start the timer
+            seconds = 9;
+            miliSeconds = 99;
             timerToggle = 1;
 
             let doge = document.getElementById("dog");
             doge.style = "width:100%; transition: 0.5s ease-in-out; transform: scale(1.0);";
+            
+            console.log(players);
         }
 
     </script>
 
     <script>
         players = JSON.parse(sessionStorage.getItem("players"));
-        //Timer
-        var minutes = 0;
-        var seconds = 0;
-        
-
         JumlahPlayer = players;
 
         function bone(){
@@ -186,7 +186,7 @@
                         if (seconds < 0) {
                             seconds = 9;
                             playerTurn++;
-                            if (playerTurn == playerCount) {
+                            if (playerTurn == playerCount - 1) {
                                 playerTurn = 0;
                             }
                         }
@@ -208,7 +208,7 @@
                         if(seconds == 0 && miliSeconds == 0){
                             $("#timer").html("00" + ":" + "00");
                             timerToggle = 0;
-                            myModal.show();
+                            KickCurrentPlayer();
                         }
                     }else{
                         if (miliSeconds < 10) {
@@ -232,8 +232,27 @@
 
             }, 10);
 
-
         })
+
+        function KickCurrentPlayer(){
+            //edit modal, show modal
+            $("#ply_name").html(players[playerTurn].name + " has been moved out from the game for causing a ruckus. You can proceed without them or start a new game.");
+            myModal.show();
+
+            //remove current player
+            if(playerTurn == 0){
+                players = players.splice(1, players.length - 1);
+            }else if(playerTurn == playerCount){
+                players = players.splice(0, players.length - 1);
+            }else{
+                players = players
+                    .splice(0, playerTurn) //players before
+                    .concat(
+                        players.splice( playerTurn + 1, players.length - ( playerTurn + 1 ) ) //players after
+                    )
+            }
+            playerCount--;
+        }
     </script>
 
     <script type="text/javascript" src="js/mute_btn.js"></script>
