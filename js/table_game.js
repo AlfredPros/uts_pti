@@ -83,6 +83,7 @@ function dangerous_boners_selected() {
 
     let doge = document.getElementById("dog");
     doge.style = "width:100%; transition: 0.5s ease-in-out; transform: scale(2.5);";
+    doge.src = "resources/spike-awake.png";
 
     myModal.show();
 }
