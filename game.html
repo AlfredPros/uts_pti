@@ -139,6 +139,7 @@
 
         function continue_func() {
             alert("Continues!");
+            timerToggle = 1;
         }
 
     </script>
@@ -197,25 +198,28 @@
         
         var seconds = 9;
         var miliSeconds = 99;
+        var timerToggle = 1; //0 untuk mematikan timer
         var playerTurn = 0;
         var playerCount = players.length; //Ubah player-count sesuai jumlah player
 
         //On document ready
         $(document).ready(function () {
 
-            //set a function to run every 1 second
+            //set a function to run every 0.01 second
             setInterval(function () {
 
                 //update timer and turn variables
-                miliSeconds--;
-                if (miliSeconds < 0) {
-                    miliSeconds = 99;
-                    seconds--;
-                    if (seconds < 0) {
-                        seconds = 9;
-                        playerTurn++;
-                        if (playerTurn == playerCount) {
-                            playerTurn = 0;
+                if(timerToggle > 0){
+                    miliSeconds--;
+                    if (miliSeconds < 0) {
+                        miliSeconds = 99;
+                        seconds--;
+                        if (seconds < 0) {
+                            seconds = 9;
+                            playerTurn++;
+                            if (playerTurn == playerCount) {
+                                playerTurn = 0;
+                            }
                         }
                     }
                 }
@@ -234,8 +238,8 @@
                         }
                         if(seconds == 0 && miliSeconds == 0){
                             $("#timer").html("00" + ":" + "00");
+                            timerToggle = 0;
                             myModal.show();
-                            
                         }
                     }else{
                         if (miliSeconds < 10) {
