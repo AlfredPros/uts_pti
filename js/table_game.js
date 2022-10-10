@@ -6,22 +6,17 @@ let id = 0;
 let dangerous_boners = [];
 
 // Function to select random bones
-function random_bones() {
-    for (let i = 0; dangerous_boners.length < num; i++) {
-        // Generate Random Number between 0 and 4*number of players
-        const x = Math.floor(Math.random() * (4 * num));
-        // Check if the number is already in danger_bones
-        if (!dangerous_boners.includes(x)) {
-            dangerous_boners.push(x);
-        }
+for (let i = 0; dangerous_boners.length < num; i++) {
+    // Generate Random Number between 0 and 4*number of players
+    const x = Math.floor(Math.random() * (4 * num));
+    // Check if the number is already in danger_bones
+    if (!dangerous_boners.includes(x)) {
+        dangerous_boners.push(x);
     }
 }
 
 for (let i = 0; i < num + 2; i++) {
-    random_bones();
     temp = "";
-    console.log(dangerous_boners);
-
     temp += "<tr>";
 
     for (let j = 0; j < num + 2; j++) {
@@ -73,7 +68,7 @@ for (let i = 0; i < num + 2; i++) {
 
 for (let i = 0; i < 4 * num; i++) {
     let boner = document.getElementById("bone" + i);
-    if (boner.className == "dangerous_boners" ) boner.addEventListener("click", dangerous_boners_selected);
+    if (boner.className == "dangerous_boners") boner.addEventListener("click", dangerous_boners_selected);
     else boner.addEventListener("click", safer_boners_selected);
 }
 
