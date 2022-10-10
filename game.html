@@ -198,17 +198,32 @@
                 //update the user interface
                 $("#player-turn").html(players[playerTurn].name);
                 if (seconds < 10) {
-                    if (miliSeconds < 10) {
-                        $("#timer").html("0" + seconds + ":0" + miliSeconds);
-                    } else {
-                        $("#timer").html("0" + seconds + ":" + miliSeconds);
+                    if(seconds < 5){
+                        if (miliSeconds < 10) {
+                            $("#timer").html("0" + seconds + ":0" + miliSeconds);
+                            document.getElementById("timer").style.color = "#ff0000";
+                        } else {
+                            $("#timer").html("0" + seconds + ":" + miliSeconds);
+                            document.getElementById("timer").style.color = "#ff0000";
+                        }
+                    }else{
+                        if (miliSeconds < 10) {
+                            $("#timer").html("0" + seconds + ":0" + miliSeconds);
+                            document.getElementById("timer").style.color = "#000";
+                        } else {
+                            $("#timer").html("0" + seconds + ":" + miliSeconds);
+                            document.getElementById("timer").style.color = "#000";
+                        }
                     }
+                    
                 } else {
                     if (miliSeconds < 10) {
-                        $("#timer").html(seconds + ":0" + miliSeconds);
-                    } else {
-                        $("#timer").html(seconds + ":" + miliSeconds);
-                    }
+                            $("#timer").html("0" + seconds + ":0" + miliSeconds);
+                            document.getElementById("timer").style.color = "#ff0000";
+                        } else {
+                            $("#timer").html("0" + seconds + ":" + miliSeconds);
+                            document.getElementById("timer").style.color = "#ff0000";
+                        }
                 }
 
             }, 10);
