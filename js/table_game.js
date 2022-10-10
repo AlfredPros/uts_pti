@@ -7,6 +7,29 @@ let win = false;
 
 let dangerous_boners = [];
 
+var audio = new Audio("resources/tkcd0006_bgm_sm.mp3");
+audio.play();
+
+// AudioContext API
+var dogBarkingBuffer = null;
+var context = new AudioContext();
+var url = "resources/tkcd0006_bgm_sm.mp3";
+
+function loadDogSound(url) {
+    var request = new XMLHttpRequest();
+    request.open('GET', url, true);
+    request.responseType = 'arraybuffer';
+
+    // Decode asynchronously
+    request.onload = function() {
+    context.decodeAudioData(request.response, function(buffer) {
+        dogBarkingBuffer = buffer;
+    }, onError);
+    }
+    request.send();
+}
+
+
 // Function to select random bones
 for (let i = 0; dangerous_boners.length < num; i++) {
     // Generate Random Number between 0 and 4*number of players

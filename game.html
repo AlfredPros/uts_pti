@@ -93,16 +93,13 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="staticBackdropLabel">Spike Has Woken Up!</h5>
-                    <button type="button" class="button btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" id="staticBackdropBody">
                     <span id="ply_name"> [player_name] has been moved out from the game for causing a ruckus. You can proceed without them or start a new game.</span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="button btn-primary btn-block btn-4" data-bs-dismiss="modal" id="continue">Continue</button>
-                    <a href="index.html">
-                        <button type="button" class="button btn-primary btn-block btn-2">Restart</button>
-                    </a>
+                    <button type="button" class="button btn-primary btn-block btn-4" onclick="continue_func()" data-bs-dismiss="modal" id="continue">Continue</button>
+                    <button type="button" class="button btn-primary btn-block btn-2" onclick="window.location.replace('index.html');" id="cancel">Restart</button>
                 </div>
             </div>
         </div>
@@ -110,9 +107,14 @@
     <script>
         let myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
 
-        let continue_btn = document.getElementById("continue");
-        continue_btn.addEventListener("click", continue_func);
+        // First prompt: audio playback
+        $("#staticBackdropLabel").text("Testing");
+        $("#staticBackdropBody").text("Testing for audio prompt later.");
+        $("#continue").remove();
+        $("#cancel").remove();
+        //myModal.show();
 
+        // Continue button function
         function continue_func() {
             //reset and start the timer
             seconds = 9;
@@ -131,6 +133,11 @@
     <script>
         players = JSON.parse(sessionStorage.getItem("players"));
         JumlahPlayer = players;
+
+        // Check if any player exists
+        if (players == undefined) {
+            window.location.replace('index.html');
+        }
 
         function bone(){
             for(var i = 0; i < JumlahPlayer; i++){
@@ -177,7 +184,7 @@
         
         var seconds = 9;
         var miliSeconds = 99;
-        var timerToggle = 1; //0 untuk mematikan timer
+        var timerToggle = 0; //0 untuk mematikan timer
         var playerTurn = 0;
         var playerCount = players.length; //Ubah player-count sesuai jumlah player
 
