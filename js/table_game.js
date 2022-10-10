@@ -1,4 +1,4 @@
-let num = 4;
+let num = playerCount;  // 4
 let spacing = 1.0 / num;
 let temp = "";
 let id = 0;
