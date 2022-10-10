@@ -49,9 +49,12 @@ li{font-family: "Aller";
     font-weight: bold;
 }
 
-hr{
-    color: black;
-    opacity: 1.0;
+hr{color: black;
+    opacity: 5;
+    height: 10px;
+    width: auto;
+    background-color: black;
+    border: 0.7px;
 }
 
 #addPlayerButton{font-family: "Aller";
