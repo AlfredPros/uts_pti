@@ -160,16 +160,16 @@ label{font-family: "Aller";
   
   /* Button 2 */
   .btn-2 {
-    background: #EF0202;
+    background: #FBA49F;
     color: #fff;
   }
   
   .btn-2:hover {
-    background: #A20202;
+    background: #D28B86;
   }
   
   .btn-2:active {
-    background: #C80505;
+    background: #D28B86;
     top: 2px;
   }
   
