@@ -61,39 +61,7 @@
             <div class="col text-center justify-content-center">
                 <table>
                     <tbody id="game-content">
-                        <!-- <tr>
-                            <th style="width: 16.67%"></th>
-                            <th style="width: 16.67%"><img src="resources/bone.png" style="width:100%" /></th>
-                            <th style="width: 16.67%"><img src="resources/bone.png" style="width:100%" /></th>
-                            <th style="width: 16.67%"><img src="resources/bone.png" style="width:100%" /></th>
-                            <th style="width: 16.67%"><img src="resources/bone.png" style="width:100%" /></th>
-                            <th style="width: 16.67%"></th>
-                        </tr>
-                        <tr>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                            <td colspan="4" rowspan="4"> <img src="resources/spike-sleep.png" style="width:100%" /></td>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
-                            <td> <img src="resources/bone.png" style="width:100%"/> </td>
-                        </tr>
-                        <tr>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                            <td> <img src="resources/bone.png" style="width:100%" /> </td>
-                            <td></td>
-                        </tr> -->
+
                     </tbody>
                 </table>
 
@@ -132,14 +100,15 @@
     </div>
     <script>
         let myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
-        myModal.show();
 
         let continue_btn = document.getElementById("continue");
         continue_btn.addEventListener("click", continue_func);
 
         function continue_func() {
-            alert("Continues!");
             timerToggle = 1;
+
+            let doge = document.getElementById("dog");
+            doge.style = "width:100%; transition: 0.5s ease-in-out; transform: scale(1.0);";
         }
 
     </script>
