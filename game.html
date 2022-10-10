@@ -195,8 +195,8 @@
                         seconds--;
                         if (seconds < 0) {
                             seconds = 9;
-                            playerTurn++;
-                            if (playerTurn == playerCount - 1) {
+                            KickCurrentPlayer();
+                            if (playerTurn >= playerCount - 1) {
                                 playerTurn = 0;
                             }
                         }
@@ -215,11 +215,13 @@
                             $("#timer").html("0" + seconds + ":" + miliSeconds);
                             document.getElementById("timer").style.color = "#ff0000";
                         }
+                        /*
                         if(seconds == 0 && miliSeconds == 0){
                             $("#timer").html("00" + ":" + "00");
                             timerToggle = 0;
                             KickCurrentPlayer();
                         }
+                        */
                     }else{
                         if (miliSeconds < 10) {
                             $("#timer").html("0" + seconds + ":0" + miliSeconds);
@@ -256,9 +258,9 @@
                 players = players.splice(0, players.length - 1);
             }else{
                 players = players
-                    .splice(0, playerTurn) //players before
+                    .splice(0, playerTurn) //players behind
                     .concat(
-                        players.splice( playerTurn + 1, players.length - ( playerTurn + 1 ) ) //players after
+                        players.splice( playerTurn + 1, players.length - ( playerTurn + 1 ) ) //players in front
                     )
             }
             playerCount--;
