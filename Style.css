@@ -134,16 +134,17 @@ label{font-family: "Aller";
   
   /* Button 1 */
   .btn-1 {
-    background: #f3aa33;
+    background: #f9c992;
     color: #fff;
   }
   
   .btn-1:hover {
+
     background: #b27023;
   }
   
   .btn-1:active {
-    background: #cc8420;
+    background: #e0b583;
     top: 2px;
   }
   
@@ -209,16 +210,16 @@ label{font-family: "Aller";
   
   /* Button 3 */
   .btn-4 {
-    background: #34495e;
+    background: #00FE94;
     color: #fff;
   }
   
   .btn-4:hover {
-    background: #2c3e50;
+    background: #01CF79;
   }
   
   .btn-4:active {
-    background: #2c3e50;
+    background: #00E585;
     top: 2px;
   }
   
