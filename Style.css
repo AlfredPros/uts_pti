@@ -96,7 +96,7 @@ label{font-family: "Aller";
 }
 
 .fade-in { 
-    animation: fadeIn 5s;
+    animation: fadeIn 2s;
 }
 
 @keyframes fadeIn {
