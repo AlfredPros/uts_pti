@@ -1,3 +1,17 @@
+#logo {
+    width: 7em;
+}
+
+.myFlexContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.playerDIV {
+  height: 10rem;
+}
+
 @font-face {
     font-family: "Aller" ;
     src: url(resources/Aller.ttf);
