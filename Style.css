@@ -84,6 +84,7 @@ label{font-family: "Aller";
     border: none;
     /* font-family: 'Lato'; */
     font-size: inherit;
+    text-shadow: 1px 1px 1px white;
     color: inherit;
     background: none;
     cursor: pointer;
@@ -135,7 +136,7 @@ label{font-family: "Aller";
   /* Button 1 */
   .btn-1 {
     background: #f4bb73;
-    color: #fff;
+    color: black;
   }
   
   .btn-1:hover {
@@ -186,7 +187,7 @@ label{font-family: "Aller";
   /* Button 3 */
   .btn-3 {
     background: #e74c3c;
-    color: #fff;
+    color: black;
   }
   
   .btn-3:hover {
