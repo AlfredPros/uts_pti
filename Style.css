@@ -39,3 +39,42 @@ hr{
     color: black;
     opacity: 1.0;
 }
+
+#addPlayerButton{font-family: "Aller";
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+button{
+    background-color: #fec993 !important;
+    border-color: #fec993 !important;
+}
+
+label{font-family: "Aller";
+    color: gray;
+    opacity: 0.5;
+    font-weight: bold;
+}
+
+#staticBackdropLabel{font-family: "Aller";
+    color: black;
+    opacity: 2.0;
+    font-weight: bold;
+}
+
+#ply_name{font-family: "Aller";
+    color: black;
+    opacity: 1.0;
+    font-weight: bold;
+}
+
+#playButton{font-family: "Aller";
+    color: black;
+    text-shadow: 1px 1px 1px white;
+    opacity: 2.0;
+    font-weight: bold;
+
+}
+
