@@ -47,10 +47,10 @@ hr{
     font-weight: bold;
 }
 
-button{
+/* button{
     background-color: #fec993 !important;
     border-color: #fec993 !important;
-}
+} */
 
 label{font-family: "Aller";
     color: gray;
@@ -87,9 +87,9 @@ label{font-family: "Aller";
     color: inherit;
     background: none;
     cursor: pointer;
-    padding: 25px;
+    padding: 10px;
     display: inline-block;
-    margin: 15px 30px;
+    margin: 10px 20px;
     text-transform: uppercase;
     letter-spacing: 1px;
     font-weight: 700;
@@ -139,11 +139,11 @@ label{font-family: "Aller";
   }
   
   .btn-1:hover {
-    background: #622a10;
+    background: #b27023;
   }
   
   .btn-1:active {
-    background: #b27023;
+    background: #cc8420;
     top: 2px;
   }
   
