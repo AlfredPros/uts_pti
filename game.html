@@ -264,6 +264,26 @@
                     )
             }
             playerCount--;
+
+            //if one player left, declare victory by default
+            if(playerCount == 1){
+                GameWin(0);
+            }
+        }
+
+        function GameWin(victoryType){
+            //turn off timer
+            timerToggle = 0;
+
+            //edit modal based on victory type
+            $("#staticBackdropLabel").html(players[playerTurn].name + " has won the game!");
+            if (victoryType == 1){
+                $("#ply_name").html("All of Spike's bones have been taken");
+            }else{
+                $("#ply_name").html("Everyone else caused a ruckus");
+            }
+            
+            myModal.show();
         }
     </script>
 

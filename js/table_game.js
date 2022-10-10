@@ -96,10 +96,10 @@ function safer_boners_selected() {
 
     // Check if all corect bones are picked
     if (picked_correct_bone == num*3) {
+        //stop the timer and declare victory
         timerToggle = 0;
         win = true;
-
-        myModal.show();
+        GameWin(1);
     }
     else {
         // Time restarts
