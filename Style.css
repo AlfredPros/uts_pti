@@ -1,25 +1,38 @@
-#judul {font-family: " Aller";
-    color: black;
-    text-shadow: 3px 3px 3px white;
-    opacity: 2.0;
+@font-face {
+    font-family: "Aller" ;
+    src: url(resources/Aller.ttf);
 }
 
-#player-turn{font-family: " Aller";
+#judul {font-family: "Aller";
     color: black;
     text-shadow: 3px 3px 3px white;
     opacity: 2.0;
+    font-size: 50px;
+    font-weight: bold;
 }
 
-p{font-family: " Aller";
+#player-turn{font-family: "Aller";
     color: black;
     text-shadow: 3px 3px 3px white;
     opacity: 2.0;
+    font-size: 15px;
+    font-weight: bold;
 }
 
-li{font-family: " Aller";
+p{font-family: "Aller";
     color: black;
     text-shadow: 3px 3px 3px white;
     opacity: 2.0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+li{font-family: "Aller";
+    color: black;
+    text-shadow: 3px 3px 3px white;
+    opacity: 2.0;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 hr{
