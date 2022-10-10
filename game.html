@@ -28,6 +28,12 @@
             height: 100%;
 
         }
+
+        @media screen and (max-width: 495px) {
+            #logo {
+                width: 6em;
+            }
+        }
     </style>
 </head>
 
@@ -36,14 +42,14 @@
     <!-- Header -->
     <div class="container-fluid mt-4">
         <div class="row">
-            <div class="col-1 text-center offset-1">
+            <div class="col-sm-12 col-md-1 offset-md-1">
                 <a href="index.html">
                     <button class="button btn-2">Back</button>
                 </a>
             </div>
-            <div class="col-8 text-center">
+            <div class="col-md-8 text-center">
                 <h2 class="text-center" id="judul">Don't Take Spike's Bones</h2>
-                <img class="img-fluid mx-auto my-2" style="width: 10%;" src="resources/spike-logo.png" alt="SPIKE">
+                <img id="logo" class="img-fluid mx-auto my-2" src="resources/spike-logo.png" alt="SPIKE">
             </div>
         </div>
         <hr>

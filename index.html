@@ -10,9 +10,6 @@
     <title>UwU</title>
     <link rel="stylesheet" href="Style.css" />
     <style>
-        .playerDIV {
-            height: 15rem;
-        }
 
         body {
             background: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)), url(./resources/unknown.png);
@@ -22,6 +19,12 @@
             height: 100%;
 
         }
+
+        @media screen and (max-width: 495px) {
+            #logo {
+                width: 6em;
+            }
+        }
     </style>
 </head>
 
@@ -29,7 +32,7 @@
     <div class="container-fluid mt-4">
         <div class="row">
             <h2 class="text-center" id="judul">Don't Take Spike's Bones</h2>
-            <img class="img-fluid mx-auto my-2" style="width: 10%;" src="resources/spike-logo.png" alt="SPIKE">
+            <img id="logo" class="img-fluid mx-auto my-2" src="resources/spike-logo.png" alt="SPIKE"/>
         </div>
         <hr>
         <div class="d-flex flex-column flex-nowrap align-items-center">
@@ -39,11 +42,11 @@
             </div>
             <!-- Form Input -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="playerInput" placeholder="New Player" onfocus="">
+                <input type="text" class="form-control" id="playerInput" placeholder="New Player">
                 <label for="floatingInput">New Player</label>
             </div>
             <!-- Button -->
-            <div>
+            <div class="myFlexContainer">
                 <button id="addPlayerButton" style="width: 12rem;" class="button btn-primary btn-block btn-1">Add player</button>
                 <button id="playButton" style="width: 12rem;" class="button btn-primary btn-block btn-1">Play</button>
             </div>
