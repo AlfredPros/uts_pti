@@ -83,16 +83,24 @@ hr{
   
   /* Button 1 */
   .btn-1 {
-    background: #f3aa33;
+    background: #f9c992;
     color: #fff;
   }
   
   .btn-1:hover {
+<<<<<<< Updated upstream
     background: #622a10;
   }
   
   .btn-1:active {
     background: #b27023;
+=======
+    background: #e0b583;
+  }
+  
+  .btn-1:active {
+    background: #e0b583;
+>>>>>>> Stashed changes
     top: 2px;
   }
   
@@ -158,16 +166,16 @@ hr{
   
   /* Button 3 */
   .btn-4 {
-    background: #34495e;
+    background: #00FE94;
     color: #fff;
   }
   
   .btn-4:hover {
-    background: #2c3e50;
+    background: #01CF79;
   }
   
   .btn-4:active {
-    background: #2c3e50;
+    background: #00E585;
     top: 2px;
   }
   
