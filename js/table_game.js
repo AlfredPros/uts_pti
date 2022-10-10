@@ -2,6 +2,8 @@ let num = playerCount;  // 4
 let spacing = 1.0 / num;
 let temp = "";
 let id = 0;
+let picked_correct_bone = 0;
+let win = false;
 
 let dangerous_boners = [];
 
@@ -74,7 +76,7 @@ for (let i = 0; i < 4 * num; i++) {
 
 function dangerous_boners_selected() {
 
-    // Timer stopped, Doge expands, modal shows, hide bone
+    // Timer stopped, Doge expands, modal shows
     timerToggle = 0;
     seconds = 0;
     miliSeconds = 0;
@@ -87,8 +89,19 @@ function dangerous_boners_selected() {
 
 function safer_boners_selected() {
 
-    // Time restarts, hide bone
-    seconds = 9;
-    miliSeconds = 99;
+    picked_correct_bone++;
+
+    // Check if all corect bones are picked
+    if (picked_correct_bone == num*3) {
+        timerToggle = 0;
+        win = true;
+
+        myModal.show();
+    }
+    else {
+        // Time restarts
+        seconds = 9;
+        miliSeconds = 99;
+    }
 
 }
