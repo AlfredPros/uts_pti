@@ -39,7 +39,7 @@
             </div>
             <!-- Form Input -->
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="playerInput" placeholder="New Player">
+                <input type="text" class="form-control" id="playerInput" placeholder="New Player" onfocus="">
                 <label for="floatingInput">New Player</label>
             </div>
             <!-- Button -->
@@ -58,7 +58,30 @@
     <script>
         var players = [];
 
-        $("#addPlayerButton").click(function () {
+        $("#addPlayerButton").click(v => addPlayer());
+
+        function showPlayerList() {
+            $("#playerList").empty();
+            for (let i = 0; i < players.length; i++) {
+                $("#playerList").append("<li>" + players[i].name + "</li>");
+            }
+        }
+
+        $("#playButton").click(function () {
+            if (players.length < 2) {
+                alert("Must be more than one player!!!");
+                return;
+            }
+            sessionStorage.setItem("players", JSON.stringify(players));
+            window.location.href = "game.html";
+        });
+
+        function addPlayer() {
+            if (players.length >= 5) {
+                alert("Cannot add more players!");
+                $("#playerInput").val("");
+                return;
+            }
             player_name = $("#playerInput").val();
             if (player_name.length < 1) {
                 alert("Please Input Name");
@@ -76,24 +99,9 @@
             };
             players.push(player);
             console.log(players);
+            $("#playerInput").val("");
             showPlayerList();
-        })
-
-        function showPlayerList() {
-            $("#playerList").empty();
-            for (let i = 0; i < players.length; i++) {
-                $("#playerList").append("<li>" + players[i].name + "</li>");
-            }
         }
-
-        $("#playButton").click(function () {
-            if (players.length < 2) {
-                alert("Must be more than one player!!!");
-                return;
-            }
-            sessionStorage.setItem("players", JSON.stringify(players));
-            window.location.href = "game.html";
-        });
     </script>
 
 
