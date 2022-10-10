@@ -225,7 +225,8 @@
                             $("#timer").html("0" + seconds + ":" + miliSeconds);
                             document.getElementById("timer").style.color = "#ff0000";
                         }
-                        if(seconds == 0){
+                        if(seconds == 0 && miliSeconds == 0){
+                            $("#timer").html("00" + ":" + "00");
                             myModal.show();
                             
                         }
