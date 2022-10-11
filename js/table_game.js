@@ -7,38 +7,21 @@ let win = false;
 
 let dangerous_boners = [];
 
-var audio = new Audio("resources/tkcd0006_bgm_sm.mp3");
-audio.play();
 
-// AudioContext API
-var dogBarkingBuffer = null;
-var context = new AudioContext();
-var url = "resources/tkcd0006_bgm_sm.mp3";
-
-function loadDogSound(url) {
-    var request = new XMLHttpRequest();
-    request.open('GET', url, true);
-    request.responseType = 'arraybuffer';
-
-    // Decode asynchronously
-    request.onload = function() {
-    context.decodeAudioData(request.response, function(buffer) {
-        dogBarkingBuffer = buffer;
-    }, onError);
-    }
-    request.send();
+function randint(max) {  // From 0 to max
+    return Math.floor(Math.random() * max);
 }
-
 
 // Code to select random bones
 for (let i = 0; dangerous_boners.length < num; i++) {
     // Generate Random Number between 0 and 4*number of players
-    const x = Math.floor(Math.random() * (4 * num));
+    const x = randint(4 * num);
     // Check if the number is already in danger_bones
     if (!dangerous_boners.includes(x)) {
         dangerous_boners.push(x);
     }
 }
+
 
 // Generating bones
 for (let i = 0; i < num + 2; i++) {
@@ -92,6 +75,7 @@ for (let i = 0; i < num + 2; i++) {
     $("#game-content").append(temp);
 }
 
+
 // Bone Behavior
 for (let i = 0; i < 4 * num; i++) {
     let boner = document.getElementById("bone" + i);
@@ -108,7 +92,7 @@ function dangerous_boners_selected() {
 
     //Doge expands, hide bone
     let doge = document.getElementById("dog");
-    doge.style = "width:100%; transition: 0.5s ease-in-out; transform: scale(2.5);";
+    doge.style = "width:100%; transition: 0.25s ease-in-out; transform: scale(2.5);";
     doge.src = "resources/spike-awake.png";
 
     //KickCurrentPlayer
@@ -124,12 +108,17 @@ function safer_boners_selected() {
         //stop the timer and declare victory
         timerToggle = 0;
         win = true;
-        GameWin(1);
+        show_modal("player_tied");
+        play_sound("victory2");
     }
     else {
         // Time restarts
         seconds = 9;
         miliSeconds = 99;
+
+        // Randomize sound
+        let rand = randint(4) + 1;
+        play_sound("bone"+rand);
     }
 
 }

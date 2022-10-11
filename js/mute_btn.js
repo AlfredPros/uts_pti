@@ -1,7 +1,7 @@
 let mute_btn = document.getElementById("mute");
 let track = document.getElementById("background_music");
+let mute = false;
 
-//mute_btn.addEventListener("click", mute_func);
 function mute_func() {
     dir = mute_btn.src;
 
@@ -16,9 +16,88 @@ function mute_func() {
         path = path + "muted.png"
         mute_btn.src = path;
         track.muted = true;
+        mute = true;
     } else if (dir[dir.length - 1] == "muted.png") {
         path = path + "unmuted.png"
         mute_btn.src = path;
         track.muted = false;
+        mute = false;
     } else alert("Error occured!");
+}
+
+// Music function
+function play_music(mute_init=false) {
+
+    mute = false;
+    $("#background_music")[0].play();
+
+    if (mute_init == true) mute_func();
+
+}
+
+function play_sound(type) {
+    // Sound effect
+
+    if (mute == false) {
+        switch (type) {
+            case "bone1": {
+                $("#sound_effect_bone1")[0].play();
+                break;
+            }
+            case "bone2": {
+                $("#sound_effect_bone2")[0].play();
+                break;
+            }
+            case "bone3": {
+                $("#sound_effect_bone3")[0].play();
+                break;
+            }
+            case "bone4": {
+                $("#sound_effect_bone4")[0].play();
+                break;
+            }
+
+            case "doge1": {
+                $("#sound_effect_doge1")[0].play();
+                break;
+            }
+            case "doge2": {
+                $("#sound_effect_doge2")[0].play();
+                break;
+            }
+            case "doge3": {
+                $("#sound_effect_doge3")[0].play();
+                break;
+            }
+            case "doge4": {
+                $("#sound_effect_doge4")[0].play();
+                break;
+            }
+            case "doge5": {
+                $("#sound_effect_doge5")[0].play();
+                break;
+            }
+
+            case "confirm": {
+                $("#sound_effect_confirm")[0].play();
+                break;
+            }
+
+            case "cancel": {
+                $("#sound_effect_cancel")[0].play();
+                break;
+            }
+
+            case "victory1": {
+                $("#sound_effect_victory1")[0].play();
+                break;
+            }
+            case "victory2": {
+                $("#sound_effect_victory2")[0].play();
+                break;
+            }
+
+            default: break;
+        }
+    }
 }

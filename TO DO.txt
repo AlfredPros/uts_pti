@@ -1,0 +1,12 @@
+
+Next to do:
+- Rotate player for each bone picked
+- 1st player JS + proper game description
+- make input hint darker
+- Player list box
+- Fixed bone table height
+- Player list and score on the left
+- Media query
+- bug test
+- Freeze images
+- modal styling

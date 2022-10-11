@@ -18,6 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous">
     </script>
+    <script type="text/javascript" src="js/modal_condition.js"></script>
     <link rel="stylesheet" href="Style.css" />
     <style>
         body {
@@ -58,16 +59,14 @@
     <!-- Content -->
     <div class="container">
         <div class="row">
-            <div class="col text-start">
+            <div class="col text-start">  <!-- Left -->
                 <p>Turns: <span id="player-turn">1</span></p>
                 <p>Timer: <span id="timer">00:00</span></p>
-                <div>
-
-                </div>
+                <div id="player-list"></div>
             </div>
 
 
-            <div class="col text-center justify-content-center">
+            <div class="col text-center justify-content-center">  <!-- Middle -->
                 <table>
                     <tbody id="game-content">
 
@@ -79,9 +78,22 @@
                 </div>
             </div>
 
-            <div class="col text-end">
+            <div class="col text-end">  <!-- Right -->
                 <img src="resources/unmuted.png" style="width:12%; cursor:pointer;" id="mute" onclick="mute_func()" />
-                <audio src="resources/background_music.mp3" id="background_music" autoplay loop>Audio</audio>
+                <audio src="resources/background_music.mp3" id="background_music" loop>music bgm</audio>
+                <audio src="resources/select.wav" id="sound_effect_bone1">sound bone1</audio>
+                <audio src="resources/Item1.ogg" id="sound_effect_bone2">sound bone2</audio>
+                <audio src="resources/Correct2.wav" id="sound_effect_bone3">sound bone3</audio>
+                <audio src="resources/Miss.ogg" id="sound_effect_bone4">sound bone4</audio>
+                <audio src="resources/dog_bark.opus" id="sound_effect_doge1">sound doge1</audio>
+                <audio src="resources/kyaaa.wav" id="sound_effect_doge2">sound doge2</audio>
+                <audio src="resources/Scream.ogg" id="sound_effect_doge3">sound doge3</audio>
+                <audio src="resources/se_maoudamashii_voice_human02.ogg" id="sound_effect_doge4">sound doge4</audio>
+                <audio src="resources/Disappointment.ogg" id="sound_effect_doge5">sound doge5</audio>
+                <audio src="resources/confirm.wav" id="sound_effect_confirm">sound confirm</audio>
+                <audio src="resources/cancel.wav" id="sound_effect_cancel">sound cancel</audio>
+                <audio src="resources/Victory.wav" id="sound_effect_victory1">sound victory1</audio>
+                <audio src="resources/VictoryBoss.wav" id="sound_effect_victory2">sound victory2</audio>
             </div>
         </div>
     </div>
@@ -97,7 +109,7 @@
                 <div class="modal-body" id="staticBackdropBody">
                     <span id="ply_name"> [player_name] has been moved out from the game for causing a ruckus. You can proceed without them or start a new game.</span>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer" id="staticBackdropFooter">
                     <button type="button" class="button btn-primary btn-block btn-4" onclick="continue_func()" data-bs-dismiss="modal" id="continue">Continue</button>
                     <button type="button" class="button btn-primary btn-block btn-2" onclick="window.location.replace('index.html');" id="cancel">Restart</button>
                 </div>
@@ -108,11 +120,7 @@
         let myModal = new bootstrap.Modal(document.getElementById('staticBackdrop'), {});
 
         // First prompt: audio playback
-        $("#staticBackdropLabel").text("Testing");
-        $("#staticBackdropBody").text("Testing for audio prompt later.");
-        $("#continue").remove();
-        $("#cancel").remove();
-        //myModal.show();
+        show_modal("audio_prompt");
 
         // Continue button function
         function continue_func() {
@@ -124,10 +132,7 @@
             let doge = document.getElementById("dog");
             doge.style = "width:100%; transition: 0.5s ease-in-out; transform: scale(1.0);";
             doge.src = "resources/spike-sleep.png";
-            
-            console.log(players);
         }
-
     </script>
 
     <script>
@@ -158,7 +163,8 @@
                         seconds--;
                         if (seconds < 0) {
                             seconds = 9;
-                            KickCurrentPlayer();
+                            KickCurrentPlayer(late=true);
+                            timerToggle = 0;
                             if (playerTurn >= playerCount - 1) {
                                 playerTurn = 0;
                             }
@@ -208,10 +214,28 @@
 
         })
 
-        function KickCurrentPlayer(){
-            //edit modal, show modal
-            $("#ply_name").html(players[playerTurn].name + " has been moved out from the game for causing a ruckus. You can proceed without them or start a new game.");
-            myModal.show();
+        function KickCurrentPlayer(late=false){
+            playerCount--;
+            
+            if (playerCount == 1) {
+                play_sound("victory1");
+                
+                show_modal("player_win");
+            }
+            else if (late == true) {
+                play_sound("doge5");
+
+                show_modal("player_late");
+            }
+            else {
+                // Randomize sound
+                let rand = randint(4) + 1;
+                play_sound("doge"+rand);
+                rand = randint(2);
+                if (rand == 0) play_sound("doge5");
+
+                show_modal("player_lose");
+            }
 
             //remove current player
             if(playerTurn == 0){
@@ -225,28 +249,8 @@
                         players.splice( playerTurn + 1, players.length - ( playerTurn + 1 ) ) //players in front
                     )
             }
-            playerCount--;
-
-            //if one player left, declare victory by default
-            if(playerCount == 1){
-                GameWin(0);
-            }
         }
 
-        function GameWin(victoryType){
-            //turn off timer
-            timerToggle = 0;
-
-            //edit modal based on victory type
-            $("#staticBackdropLabel").html(players[playerTurn].name + " has won the game!");
-            if (victoryType == 1){
-                $("#ply_name").html("All of Spike's bones have been taken");
-            }else{
-                $("#ply_name").html("Everyone else caused a ruckus");
-            }
-            
-            myModal.show();
-        }
     </script>
 
     <script type="text/javascript" src="js/mute_btn.js"></script>

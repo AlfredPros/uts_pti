@@ -34,7 +34,7 @@ Detail Game:
 
 Pembagian Tugas:
 Alexander Michael Nugroho   : Styling CSS, 1st player
-Alfred Kuhlman              : UI (Page 2), mute button, modal, JS tabel permainan, action bone button, bone table mechanic
+Alfred Kuhlman              : UI (Page 2), mute button, modal, JS tabel permainan, action bone button, bone table mechanic, audio functions
 Christian					: JS untuk timer dan ronde permainan, toggle timer, timer behavior
 Gregorius Lai               : JS untuk timer stop dan continue, CSS animation for button and page 1
 Loysing Ryono Ismanto		: UI (Page 1), JSON transfer, Audio, Random dangerous boners generator, media query
