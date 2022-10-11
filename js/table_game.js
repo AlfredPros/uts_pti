@@ -30,7 +30,7 @@ function loadDogSound(url) {
 }
 
 
-// Function to select random bones
+// Code to select random bones
 for (let i = 0; dangerous_boners.length < num; i++) {
     // Generate Random Number between 0 and 4*number of players
     const x = Math.floor(Math.random() * (4 * num));
@@ -40,6 +40,7 @@ for (let i = 0; dangerous_boners.length < num; i++) {
     }
 }
 
+// Generating bones
 for (let i = 0; i < num + 2; i++) {
     temp = "";
     temp += "<tr>";
@@ -91,6 +92,7 @@ for (let i = 0; i < num + 2; i++) {
     $("#game-content").append(temp);
 }
 
+// Bone Behavior
 for (let i = 0; i < 4 * num; i++) {
     let boner = document.getElementById("bone" + i);
     if (boner.className == "dangerous_boners") boner.addEventListener("click", dangerous_boners_selected);
