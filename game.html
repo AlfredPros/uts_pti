@@ -90,6 +90,7 @@
                 <audio src="resources/Scream.ogg" id="sound_effect_doge3">sound doge3</audio>
                 <audio src="resources/se_maoudamashii_voice_human02.ogg" id="sound_effect_doge4">sound doge4</audio>
                 <audio src="resources/Disappointment.ogg" id="sound_effect_doge5">sound doge5</audio>
+                <audio src="resources/found.wav" id="sound_effect_doge6">sound doge6</audio>
                 <audio src="resources/confirm.wav" id="sound_effect_confirm">sound confirm</audio>
                 <audio src="resources/cancel.wav" id="sound_effect_cancel">sound cancel</audio>
                 <audio src="resources/Victory.wav" id="sound_effect_victory1">sound victory1</audio>
@@ -233,6 +234,7 @@
                 play_sound("doge"+rand);
                 rand = randint(2);
                 if (rand == 0) play_sound("doge5");
+                else play_sound("doge6");
 
                 show_modal("player_lose");
             }

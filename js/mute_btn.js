@@ -77,6 +77,10 @@ function play_sound(type) {
                 $("#sound_effect_doge5")[0].play();
                 break;
             }
+            case "doge6": {
+                $("#sound_effect_doge6")[0].play();
+                break;
+            }
 
             case "confirm": {
                 $("#sound_effect_confirm")[0].play();
