@@ -19,8 +19,8 @@
 
 .boxplayer{
   background-color: #f3cf9c;
-  border-radius: 20%;
-  padding: 2%;
+  border-radius: 25%;
+  padding: 1rem 2rem;
 }
 
 @font-face {
@@ -34,6 +34,14 @@
     opacity: 2.0;
     font-size: 50px;
     font-weight: bold;
+}
+
+#playerList{
+  margin-bottom: 0rem;
+}
+
+#player{
+  margin-bottom: 2px;
 }
 
 #player-turn{font-family: "Aller";
