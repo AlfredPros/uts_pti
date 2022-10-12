@@ -30,7 +30,6 @@
   text-align: center;
 }
 
-
 @font-face {
     font-family: "Aller" ;
     src: url(resources/Aller.ttf);
@@ -48,8 +47,6 @@
   margin-bottom: 0rem;
   list-style-position: inside;
 }
-
-
 
 #player{
   margin-bottom: 2px;
