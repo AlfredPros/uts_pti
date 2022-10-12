@@ -38,7 +38,7 @@
         <div class="d-flex flex-column flex-nowrap align-items-center">
             <!-- First Player -->
             <div id="player" class="d-flex align-items-center playerDIV">
-                <p style="padding-block:auto;"> 1st Player </p>
+                <p style="padding-block:auto;"> Insert <span id="insertplayer">1st</span> Player</p>
             </div>
             <!-- Form Input -->
             <div class="form-floating mb-3">
@@ -79,7 +79,10 @@
             window.location.href = "game.html";
         });
 
+        insert_player();
+
         function addPlayer() {
+            
             if (players.length >= 5) {
                 alert("Cannot add more players!");
                 $("#playerInput").val("");
@@ -104,7 +107,25 @@
             console.log(players);
             $("#playerInput").val("");
             showPlayerList();
+            insert_player();
+                
         }
+
+        function insert_player(){
+            console.log(players.length+1)
+            if(players.length == 0){
+                document.getElementById("insertplayer").innerHTML = "1st";
+            }else if(players.length == 1){
+                document.getElementById("insertplayer").innerHTML = "2nd";
+            }else if(players.length == 2){
+                document.getElementById("insertplayer").innerHTML = "3rd";
+            }else{
+                document.getElementById("insertplayer").innerHTML = players.length + "th";
+            }
+        }
+            
+            
+        
     </script>
 
 
