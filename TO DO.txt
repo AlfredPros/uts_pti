@@ -8,6 +8,6 @@ Next to do:
 - Player list and score on the left			()						[]
 - Media query 								(Loysing)				[]
 - bug test									(Alfred and others)		[]
-- Freeze images 							(Alfred)				[]
+- Freeze images 							(Alfred)				[DONE]
 - modal styling								()						[]
 - Proper game description					()						[]

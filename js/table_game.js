@@ -36,9 +36,9 @@ for (let i = 0; i < num + 2; i++) {
             if (!(j == 0 || j == num + 1)) {
 
                 if (dangerous_boners.includes(id)) {
-                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 }
                 id++;
             }
@@ -46,22 +46,22 @@ for (let i = 0; i < num + 2; i++) {
         } else if (i != num + 1) { // Content
             if (j == 0 || j == 1) {
                 if (dangerous_boners.includes(id)) {
-                    temp += '<td> <img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/> </td>';
+                    temp += '<td> <img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
                 } else {
-                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/> </td>';
+                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
                 }
                 id++;
             }
             if (j == 0 && i == 1) { // Dog: id="dog"
-                temp += '<td colspan="' + num + '" rowspan="' + num + '"> <img src="resources/spike-sleep.png" style="width:100%" id="dog" /></td>';
+                temp += '<td colspan="' + num + '" rowspan="' + num + '"> <img src="resources/spike-sleep.png" style="width:100%" id="dog" draggable="false" oncontextmenu="return false"/></td>';
             }
         } else { // Footer
             temp += "<td>";
             if (!(j == 0 || j == num + 1)) {
                 if (dangerous_boners.includes(id)) {
-                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 }
                 id++;
             }
