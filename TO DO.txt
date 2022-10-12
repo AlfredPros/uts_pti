@@ -9,6 +9,6 @@ Next to do:
 - In-game Player list box CSS				()						[]
 - Media query 								(Loysing)				[]
 - Freeze images 							(Alfred)				[DONE]
-- modal styling								(Greg)					[]
+- modal styling								(Greg)					[DONE]
 - Proper game description					(Loysing)				[DONE]
 - bug test									(Alfred and others)		[]
