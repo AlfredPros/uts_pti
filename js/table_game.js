@@ -111,6 +111,8 @@ function safer_boners_selected() {
         timerToggle = 0;
         win = true;
         show_modal("player_tied");
+        // change footer
+        $("#footer_text").text("EVERYONE THAT SURVIVED WINS!!!!!");
         play_sound("victory2");
     } else {
         // Time restarts

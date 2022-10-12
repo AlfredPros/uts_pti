@@ -81,7 +81,7 @@
                 </table>
 
                 <div class="row mt-5">
-                    <p style="font-weight: bold; font-size: 1.25em;">Steal Spike's bones, but without waking him up!</p>
+                    <p id="footer_text" style="font-weight: bold; font-size: 1.25em;">Steal Spike's bones, but without waking him up!</p>
                 </div>
             </div>
 
@@ -133,6 +133,8 @@
             seconds = 9;
             miliSeconds = 99;
             timerToggle = 1;
+            // reset footer            
+            $("#footer_text").text("Steal Spike's bones, but without waking him up!");
 
             //enlarge dog
             let doge = document.getElementById("dog");
@@ -224,11 +226,14 @@
             if (late == true) {
                 //change score board color to red
                 $("#" + players[playerTurn].name + "scoreboard").css("color", "#ff0000");
-
+                // change footer
+                $("#footer_text").text("YOU RAN OUT OF TIME!!!!!");
                 play_sound("doge5");
 
                 show_modal("player_late");
-            } else {
+            }
+            // If player lost but there are player 2+ remaining 
+            else {  
                 // Randomize sound
                 let rand = randint(4) + 1;
                 play_sound("doge" + rand);
@@ -236,13 +241,17 @@
                 if (rand == 0) play_sound("doge5");
                 else play_sound("doge6");
 
+                // change footer
+                $("#footer_text").text("YOU LOST!!!!!");
+
                 show_modal("player_lose");
             }
 
             //if the remaining player is the last one standing, declare victory
             if (players.length - 1 == 1) {
                 play_sound("victory1");
-
+                // change footer
+                $("#footer_text").text("YOU WON!!!!!");
                 show_modal("player_win");
             }
 
