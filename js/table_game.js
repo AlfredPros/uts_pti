@@ -97,6 +97,9 @@ function dangerous_boners_selected() {
     doge.style = "width:100%; transition: 0.25s ease-in-out; transform: scale(2.5);";
     doge.src = "resources/spike-awake.png";
 
+    //change score board color to red
+    $("#" + players[playerTurn].name + "scoreboard").css("color", "#ff0000");
+
     //KickCurrentPlayer
     KickCurrentPlayer();
 }
@@ -106,7 +109,7 @@ function safer_boners_selected() {
     picked_correct_bone++;
 
     //update player score
-    $("#" + players[playerTurn].name + "score").html(++playerScores[playerTurn]);
+    $("#" + players[playerTurn].name + "scoreboard span").html(++playerScores[playerTurn]);
 
     // Check if all corect bones are picked
     if (picked_correct_bone == num*3) {
