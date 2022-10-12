@@ -217,6 +217,9 @@
         function KickCurrentPlayer(late=false){
             
             if (late == true) {
+                //change score board color to red
+                $("#" + players[playerTurn].name + "scoreboard").css("color", "#ff0000");
+
                 play_sound("doge5");
 
                 show_modal("player_late");
@@ -261,7 +264,7 @@
         let insertIntoPlayerListContainer = "";
 
         for (let i = 0; i < players.length; i++) {
-            insertIntoPlayerListContainer += "<p id=\"" + players[i].name + "scoreboard\"><span>0</span>\t" + players[i].name + "</p>" ;
+            insertIntoPlayerListContainer += "<p id=\"" + players[i].name + "scoreboard\">" + players[i].name + "\t: <span>0</span></p>" ;
         }
 
         $("#player-list").append(insertIntoPlayerListContainer);

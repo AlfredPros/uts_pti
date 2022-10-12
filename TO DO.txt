@@ -10,5 +10,5 @@ Next to do:
 - Media query 								(Loysing)				[]
 - Freeze images 							(Alfred)				[DONE]
 - modal styling								(Greg)					[]
-- Proper game description					(Loysing)				[]
+- Proper game description					(Loysing)				[DONE]
 - bug test									(Alfred and others)		[]
