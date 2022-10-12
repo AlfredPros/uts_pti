@@ -38,6 +38,7 @@
 
 #playerList{
   margin-bottom: 0rem;
+  list-style-position: inside;
 }
 
 #player{
