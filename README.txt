@@ -33,10 +33,8 @@ Detail Game:
 9. Memainkan BGM saat memainkan game atau di home.
 
 Pembagian Tugas:
-Alexander Michael Nugroho   : General styling CSS, 
+Alexander Michael Nugroho   : General styling CSS for page 1 and page 2
 Alfred Kuhlman              : UI (Page 2), mute button, modal, JS tabel permainan, action bone button, bone table mechanic, audio functions, bug testing
-Christian					: JS untuk timer dan ronde permainan, toggle timer, timer behavior, rotation player, 
-Gregorius Lai               : JS untuk timer stop dan continue, CSS animation for button and page 1, CSS for page 1,
+Christian					: JS untuk timer dan ronde permainan, toggle timer, timer behavior, rotation player, player list behavior
+Gregorius Lai               : JS untuk timer stop dan continue, CSS animation for button and page 1, CSS for page 1, Player list CSS for page 2
 Loysing Ryono Ismanto		: UI (Page 1), JSON transfer, Audio, Random dangerous boners generator, media query
-
-Written by Alfred (based on Loysing).
