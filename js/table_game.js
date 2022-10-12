@@ -7,6 +7,9 @@ let win = false;
 
 let dangerous_boners = [];
 
+//initialize player scores
+let playerScores = [];
+for(let i = 0; i < players.length; i++) playerScores.push(0);
 
 function randint(max) {  // From 0 to max
     return Math.floor(Math.random() * max);
@@ -21,7 +24,6 @@ for (let i = 0; dangerous_boners.length < num; i++) {
         dangerous_boners.push(x);
     }
 }
-
 
 // Generating bones
 for (let i = 0; i < num + 2; i++) {
@@ -102,6 +104,9 @@ function dangerous_boners_selected() {
 function safer_boners_selected() {
 
     picked_correct_bone++;
+
+    //update player score
+    $("#" + players[playerTurn].name + "score").html(++playerScores[playerTurn]);
 
     // Check if all corect bones are picked
     if (picked_correct_bone == num*3) {

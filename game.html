@@ -74,9 +74,7 @@
 
             <div class="col text-center justify-content-center">  <!-- Middle -->
                 <table>
-                    <tbody id="game-content">
-
-                    </tbody>
+                    <tbody id="game-content"></tbody>
                 </table>
 
                 <div class="row mt-5">
@@ -257,6 +255,16 @@
 
         }
 
+    </script>
+
+    <script>
+        let insertIntoPlayerListContainer = "";
+
+        for (let i = 0; i < players.length; i++) {
+            insertIntoPlayerListContainer += "<p><span id=\"" + players[i].name + "score\">0</span>\t" + players[i].name + "</p>" ;
+        }
+
+        $("#player-list").append(insertIntoPlayerListContainer);
     </script>
 
     <script type="text/javascript" src="js/mute_btn.js"></script>
