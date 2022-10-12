@@ -223,11 +223,7 @@
 
         function KickCurrentPlayer(late=false){
             
-            if (players.length == 1) {
-                play_sound("victory1");
-                
-                show_modal("player_win");
-            } else if (late == true) {
+            if (late == true) {
                 play_sound("doge5");
 
                 show_modal("player_late");
@@ -242,23 +238,28 @@
                 show_modal("player_lose");
             }
 
+            //if the remaining player is the last one standing, declare victory
+            if (players.length - 1 == 1) {
+                play_sound("victory1");
+                
+                show_modal("player_win");
+            }
+
             //remove current player
             if(playerTurn == 0){
                 players = players.splice(1, players.length - 1);
             } else if(playerTurn == players.length - 1){
                 players = players.splice(0, players.length - 1);
             } else {
-                players = players
-                    .splice(0, playerTurn) //players behind
-                    .concat(
-                        players.splice( playerTurn + 1, players.length - ( playerTurn + 1 ) ) //players in front
-                    )
+                players.splice(playerTurn, 1);
+                console.log("current players:");
+                console.log(players);
             }
-
             //if kicked player is the last player in the queue, go to first player in the queue
-            if(playerTurn == players.length){
+            if(playerTurn >= players.length){
                 playerTurn = 0;
             }
+
         }
 
     </script>
