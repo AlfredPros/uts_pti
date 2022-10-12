@@ -38,7 +38,7 @@
         <div class="d-flex flex-column flex-nowrap align-items-center">
             <!-- First Player -->
             <div id="player" class="d-flex align-items-center playerDIV">
-                <p style="padding-block:auto;"> Insert <span id="insertplayer">1st</span> Player</p>
+                <p style="padding-block:auto;" id="insertplayer"> Insert 1st Player</p>
             </div>
             <!-- Form Input -->
             <div class="form-floating mb-3">
@@ -108,19 +108,22 @@
             $("#playerInput").val("");
             showPlayerList();
             insert_player();
-                
+
         }
 
         function insert_player(){
-            console.log(players.length+1)
             if(players.length == 0){
-                document.getElementById("insertplayer").innerHTML = "1st";
+                document.getElementById("insertplayer").innerHTML = "Insert 1st player";
             }else if(players.length == 1){
-                document.getElementById("insertplayer").innerHTML = "2nd";
+                document.getElementById("insertplayer").innerHTML = "Insert 2nd player";
             }else if(players.length == 2){
-                document.getElementById("insertplayer").innerHTML = "3rd";
+                document.getElementById("insertplayer").innerHTML = "Insert 3rd player";
+            }else if(players.length == 3){
+                document.getElementById("insertplayer").innerHTML = "Insert 4th player";
+            }else if(players.length == 4){
+                document.getElementById("insertplayer").innerHTML = "Insert 5th player";
             }else{
-                document.getElementById("insertplayer").innerHTML = players.length + "th";
+                document.getElementById("insertplayer").innerHTML = "Player is full";
             }
         }
             
