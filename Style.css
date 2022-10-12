@@ -24,6 +24,12 @@
   text-shadow: #828282 !important;
 }
 
+.boxplayer{
+  background-color: #f3cf9c;
+  padding: 1rem 7rem;
+  text-align: center;
+}
+
 @font-face {
     font-family: "Aller" ;
     src: url(resources/Aller.ttf);
@@ -35,6 +41,15 @@
     opacity: 2.0;
     font-size: 50px;
     font-weight: bold;
+}
+
+#playerList{
+  margin-bottom: 0rem;
+  list-style-position: inside;
+}
+
+#player{
+  margin-bottom: 2px;
 }
 
 #player-turn{font-family: "Aller";
@@ -274,4 +289,17 @@ label{font-family: "Aller";
   
 #playerInput{font-family: "Aller";
     color: black;
+}
+
+
+.modal-background{
+  background-image: url("resources/modalbackground.png");
+}
+
+.modal-header{
+  border-bottom-color:#919191 ;
+}
+
+.modal-footer{
+  border-top-color: #919191;
 }

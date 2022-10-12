@@ -44,7 +44,7 @@
     <div class="container-fluid mt-4 fade-in">
         <div class="row">
             <h2 class="text-center" id="judul">Don't Take Spike's Bones</h2>
-            <img id="logo" class="img-fluid mx-auto my-2" src="resources/spike-logo.png" alt="SPIKE"/>
+            <img id="logo" class="img-fluid mx-auto my-2" src="resources/spike-logo.png" alt="SPIKE" draggable="false" oncontextmenu="return false"/>
         </div>
         <hr>
         <div class="myFlexContainer2">
@@ -74,9 +74,9 @@
                 <button id="playButton" style="width: 12rem;" class="button btn-primary btn-block btn-1">Play</button>
             </div>
             <!-- Player List -->
-            <div class="pt-4">
-                <p style="margin: 0;">Player List</p>
-                <ul id="playerList"></ul>
+            <div class="m-3 px-5 boxplayer rounded ">
+                <p id="player">Player List</p>
+                <ol id="playerList" style="padding-left: 0px;"></ol>
             </div>
         </div>
     </div>

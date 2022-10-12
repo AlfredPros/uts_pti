@@ -1,12 +1,14 @@
 
 Next to do:
-- Rotate player for each bone picked
-- 1st player JS + proper game description
-- make input hint darker
-- Player list box
-- Fixed bone table height
-- Player list and score on the left
-- Media query
-- bug test
-- Freeze images
-- modal styling
+- Rotate player for each bone picked 		(Christian)				[DONE]
+- 1st player JS							 	(Greg)					[DONE]
+- make input hint darker					(Greg)					[DONE]
+- Player list box							(Greg)					[DONE]
+- Fixed bone table height					()						[]
+- Player list and score on the left			(Christian)				[DONE]
+- In-game Player list box CSS				()						[]
+- Media query 								(Loysing)				[]
+- Freeze images 							(Alfred)				[DONE]
+- modal styling								(Greg)					[]
+- Proper game description					(Loysing)				[DONE]
+- bug test									(Alfred and others)		[]

@@ -7,6 +7,9 @@ let win = false;
 
 let dangerous_boners = [];
 
+//initialize player scores
+let playerScores = [];
+for(let i = 0; i < players.length; i++) playerScores.push(0);
 
 function randint(max) {  // From 0 to max
     return Math.floor(Math.random() * max);
@@ -22,7 +25,6 @@ for (let i = 0; dangerous_boners.length < num; i++) {
     }
 }
 
-
 // Generating bones
 for (let i = 0; i < num + 2; i++) {
     temp = "";
@@ -36,9 +38,9 @@ for (let i = 0; i < num + 2; i++) {
             if (!(j == 0 || j == num + 1)) {
 
                 if (dangerous_boners.includes(id)) {
-                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 }
                 id++;
             }
@@ -46,22 +48,22 @@ for (let i = 0; i < num + 2; i++) {
         } else if (i != num + 1) { // Content
             if (j == 0 || j == 1) {
                 if (dangerous_boners.includes(id)) {
-                    temp += '<td> <img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/> </td>';
+                    temp += '<td> <img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
                 } else {
-                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/> </td>';
+                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
                 }
                 id++;
             }
             if (j == 0 && i == 1) { // Dog: id="dog"
-                temp += '<td colspan="' + num + '" rowspan="' + num + '"> <img src="resources/spike-sleep.png" style="width:100%" id="dog" /></td>';
+                temp += '<td colspan="' + num + '" rowspan="' + num + '"> <img src="resources/spike-sleep.png" style="width:100%" id="dog" draggable="false" oncontextmenu="return false"/></td>';
             }
         } else { // Footer
             temp += "<td>";
             if (!(j == 0 || j == num + 1)) {
                 if (dangerous_boners.includes(id)) {
-                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 }
                 id++;
             }
@@ -95,6 +97,9 @@ function dangerous_boners_selected() {
     doge.style = "width:100%; transition: 0.25s ease-in-out; transform: scale(2.5);";
     doge.src = "resources/spike-awake.png";
 
+    //change score board color to red
+    $("#" + players[playerTurn].name + "scoreboard").css("color", "#ff0000");
+
     //KickCurrentPlayer
     KickCurrentPlayer();
 }
@@ -102,6 +107,9 @@ function dangerous_boners_selected() {
 function safer_boners_selected() {
 
     picked_correct_bone++;
+
+    //update player score
+    $("#" + players[playerTurn].name + "scoreboard span").html(++playerScores[playerTurn]);
 
     // Check if all corect bones are picked
     if (picked_correct_bone == num*3) {
