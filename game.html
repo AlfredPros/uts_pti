@@ -217,6 +217,9 @@
         function KickCurrentPlayer(late=false){
             
             if (late == true) {
+                //change score board color to red
+                $("#" + players[playerTurn].name + "scoreboard").css("color", "#ff0000");
+
                 play_sound("doge5");
 
                 show_modal("player_late");
