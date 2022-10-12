@@ -19,12 +19,23 @@
 
         }
 
-        @media screen and (max-width: 495px) {
-            #logo {
-                width: 6em;
+        @media screen and (max-width: 578px) {
+            #playerList{
+                font-size: xx-small;
             }
-        }
 
+            #logo {
+                width: 4.5rem;
+            }
+
+            #judul {
+                font-size: 1.8rem;
+            }
+
+            /* #player {
+                height: ;
+            } */
+        }
     </style>
 </head>
 
@@ -66,7 +77,7 @@
         function showPlayerList() {
             $("#playerList").empty();
             for (let i = 0; i < players.length; i++) {
-                $("#playerList").append("<li>" + players[i].name + "</li>");
+                $("#playerList").append('<li>' + players[i].name + '</li>');
             }
         }
 
