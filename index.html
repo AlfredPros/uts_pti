@@ -10,7 +10,6 @@
     <title>UwU</title>
     <link rel="stylesheet" href="Style.css" />
     <style>
-
         body {
             background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), url(./resources/unknown.png);
             background-position: center;
@@ -29,17 +28,17 @@
             }
         }
 
+        /* For small screen user so that won't need to scroll down to view player list */
         @media screen and (max-width:487.5px) {
-            .myFlexContainer2 :nth-child(1) { order: 5; }
-            .myFlexContainer2 :nth-child(2) { order: 1; }
-            .myFlexContainer2 :nth-child(3) { order: 2; }
-            .myFlexContainer2 :nth-child(4) { order: 3; }
-            .myFlexContainer2 :nth-child(5) { order: 4; }
+            .myFlexContainer2 :nth-child(1) {order: 5;}
+            .myFlexContainer2 :nth-child(2) {order: 1;}
+            .myFlexContainer2 :nth-child(3) {order: 2;}
+            .myFlexContainer2 :nth-child(4) {order: 3;}
+            .myFlexContainer2 :nth-child(5) {order: 4;}
 
-            .myFlexContainer :nth-child(1) { order: 1; }
-            .myFlexContainer :nth-child(2) { order: 2; }
+            .myFlexContainer :nth-child(1) {order: 1;}
+            .myFlexContainer :nth-child(2) {order: 2;}
         }
-        
     </style>
 </head>
 
@@ -47,7 +46,8 @@
     <div class="container-fluid mt-4 fade-in">
         <div class="row">
             <h2 class="text-center" id="judul">Don't Take Spike's Bones</h2>
-            <img id="logo" class="img-fluid mx-auto my-2" src="resources/spike-logo.png" alt="SPIKE" draggable="false" oncontextmenu="return false"/>
+            <img id="logo" class="img-fluid mx-auto my-2" src="resources/spike-logo.png" alt="SPIKE" draggable="false"
+                oncontextmenu="return false" />
         </div>
         <hr>
         <div class="myFlexContainer2">
@@ -73,7 +73,8 @@
             </div>
             <!-- Button -->
             <div class="myFlexContainer">
-                <button id="addPlayerButton" style="width: 12rem;" class="button btn-primary btn-block btn-1">Add player</button>
+                <button id="addPlayerButton" style="width: 12rem;" class="button btn-primary btn-block btn-1">Add
+                    player</button>
                 <button id="playButton" style="width: 12rem;" class="button btn-primary btn-block btn-1">Play</button>
             </div>
             <!-- Player List -->
@@ -108,7 +109,7 @@
         insert_player();
 
         function addPlayer() {
-            
+
             if (players.length >= 5) {
                 alert("Cannot add more players!");
                 $("#playerInput").val("");
@@ -137,24 +138,21 @@
 
         }
 
-        function insert_player(){
-            if(players.length == 0){
+        function insert_player() {
+            if (players.length == 0) {
                 document.getElementById("insertplayer").innerHTML = "Insert 1st player";
-            }else if(players.length == 1){
+            } else if (players.length == 1) {
                 document.getElementById("insertplayer").innerHTML = "Insert 2nd player";
-            }else if(players.length == 2){
+            } else if (players.length == 2) {
                 document.getElementById("insertplayer").innerHTML = "Insert 3rd player";
-            }else if(players.length == 3){
+            } else if (players.length == 3) {
                 document.getElementById("insertplayer").innerHTML = "Insert 4th player";
-            }else if(players.length == 4){
+            } else if (players.length == 4) {
                 document.getElementById("insertplayer").innerHTML = "Insert 5th player";
-            }else{
+            } else {
                 document.getElementById("insertplayer").innerHTML = "Player is full";
             }
         }
-            
-            
-        
     </script>
 
 
