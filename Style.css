@@ -8,8 +8,15 @@
   flex-wrap: wrap;
 }
 
+.myFlexContainer2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
 .playerDIV {
-  height: 10rem;
+  height: 5rem;
 }
 
 ::placeholder {
