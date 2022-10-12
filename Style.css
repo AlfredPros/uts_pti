@@ -283,3 +283,16 @@ label{font-family: "Aller";
 #playerInput{font-family: "Aller";
     color: black;
 }
+
+
+.modal-background{
+  background-image: url("resources/modalbackground.png");
+}
+
+.modal-header{
+  border-bottom-color:#919191 ;
+}
+
+.modal-footer{
+  border-top-color: #919191;
+}
