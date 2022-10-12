@@ -19,7 +19,8 @@
 
 .boxplayer{
   background-color: #f3cf9c;
-  padding: 1rem 10rem;
+  padding: 1rem 7rem;
+  text-align: center;
 }
 
 @font-face {
