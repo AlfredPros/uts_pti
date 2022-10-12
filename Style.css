@@ -12,6 +12,11 @@
   height: 10rem;
 }
 
+::placeholder {
+  color: #919191 !important; 
+  text-shadow: #828282 !important;
+}
+
 @font-face {
     font-family: "Aller" ;
     src: url(resources/Aller.ttf);
