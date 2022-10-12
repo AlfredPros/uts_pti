@@ -101,6 +101,23 @@ function play_sound(type) {
                 break;
             }
 
+            case "hover1": {
+                $("#sound_effect_hover1")[0].play();
+                break;
+            }
+            case "hover2": {
+                $("#sound_effect_hover2")[0].play();
+                break;
+            }
+            case "hover3": {
+                $("#sound_effect_hover3")[0].play();
+                break;
+            }
+            case "hover4": {
+                $("#sound_effect_hover4")[0].play();
+                break;
+            }
+
             default: break;
         }
     }
