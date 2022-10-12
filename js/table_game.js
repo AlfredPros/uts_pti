@@ -38,9 +38,9 @@ for (let i = 0; i < num + 2; i++) {
             if (!(j == 0 || j == num + 1)) {
 
                 if (dangerous_boners.includes(id)) {
-                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
+                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="bone_clicked(this);" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="bone_clicked(this);" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 }
                 id++;
             }
@@ -48,9 +48,9 @@ for (let i = 0; i < num + 2; i++) {
         } else if (i != num + 1) { // Content
             if (j == 0 || j == 1) {
                 if (dangerous_boners.includes(id)) {
-                    temp += '<td> <img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
+                    temp += '<td> <img class="dangerous_boners" src="resources/bone.png" onclick="bone_clicked(this);" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
                 } else {
-                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
+                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="bone_clicked(this);" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/> </td>';
                 }
                 id++;
             }
@@ -61,9 +61,9 @@ for (let i = 0; i < num + 2; i++) {
             temp += "<td>";
             if (!(j == 0 || j == num + 1)) {
                 if (dangerous_boners.includes(id)) {
-                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
+                    temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="bone_clicked(this);" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="bone_clicked(this);" style="width:100%; cursor:pointer;" id="bone' + id + '" draggable="false" oncontextmenu="return false"/>';
                 }
                 id++;
             }
@@ -79,12 +79,6 @@ for (let i = 0; i < num + 2; i++) {
 
 
 // Bone Behavior
-for (let i = 0; i < 4 * num; i++) {
-    let boner = document.getElementById("bone" + i);
-    if (boner.className == "dangerous_boners") boner.addEventListener("click", dangerous_boners_selected);
-    else boner.addEventListener("click", safer_boners_selected);
-}
-
 function dangerous_boners_selected() {
 
     // Timer stopped, show 00:00
@@ -139,5 +133,18 @@ function next_player_turn(){
     }else{
         playerTurn++;
     }
+}
+
+function bone_clicked(obj) {
+    obj.src = 'resources/bone_hidden.png';
+    obj.style = "width:100%;";
+
+    if (obj.className == "dangerous_boners") {
+        dangerous_boners_selected();
+    }
+    else {
+        safer_boners_selected();
+    }
+    obj.onclick = "";
 }
 
