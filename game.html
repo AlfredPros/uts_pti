@@ -65,14 +65,14 @@
     <!-- Content -->
     <div class="container">
         <div class="row">
-            <div class="col text-start">  <!-- Left -->
+            <div class="col text-start order-1">  <!-- Left -->
                 <p>Turns: <span id="player-turn">1</span></p>
                 <p>Timer: <span id="timer">00:00</span></p>
                 <div id="player-list" class="boxplayer rounded p-4 text-start justify-content-sm-center me-5"></div>
             </div>
 
 
-            <div class="col text-center justify-content-center">  <!-- Middle -->
+            <div class="col-md-6 col-sm-12 text-center justify-content-center order-3">  <!-- Middle -->
                 <table>
                     <tbody id="game-content"></tbody>
                 </table>
@@ -82,8 +82,8 @@
                 </div>
             </div>
 
-            <div class="col text-end">  <!-- Right -->
-                <img src="resources/unmuted.png" style="width:12%; cursor:pointer;" id="mute" onclick="mute_func()" draggable="false" oncontextmenu="return false"/>
+            <div class="col order-2 order-md-3 text-end">  <!-- Right -->
+                <img src="resources/unmuted.png" style="width:calc(24px + 3vw); cursor:pointer;" id="mute" onclick="mute_func()" draggable="false" oncontextmenu="return false"/>
                 <audio src="resources/background_music.mp3" id="background_music" loop>music bgm</audio>
                 <audio src="resources/select.wav" id="sound_effect_bone1">sound bone1</audio>
                 <audio src="resources/Item1.ogg" id="sound_effect_bone2">sound bone2</audio>
