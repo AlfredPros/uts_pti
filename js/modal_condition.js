@@ -52,7 +52,12 @@ function show_modal(prompt_type = "audio_prompt") {
 
         case "player_win": {
             let curr_player = players[playerTurn].name;
-            let next_player = players[playerTurn+1].name;
+            let next_player;
+            if(playerTurn == players.length - 1){
+                next_player = players[0].name;
+            } else {
+                next_player = players[playerTurn + 1].name;
+            }
 
             $("#staticBackdropLabel").text("Chicken Boner!");
             $("#staticBackdropBody").empty();

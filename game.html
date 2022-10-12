@@ -130,6 +130,7 @@
             miliSeconds = 99;
             timerToggle = 1;
 
+            //enlarge dog
             let doge = document.getElementById("dog");
             doge.style = "width:100%; transition: 0.5s ease-in-out; transform: scale(1.0);";
             doge.src = "resources/spike-sleep.png";
@@ -149,7 +150,6 @@
         var miliSeconds = 99;
         var timerToggle = 0; //0 untuk mematikan timer
         var playerTurn = 0;
-        var playerCount = players.length; //Ubah player-count sesuai jumlah player
 
         //On document ready
         $(document).ready(function () {
@@ -167,7 +167,7 @@
                             seconds = 9;
                             KickCurrentPlayer(late=true);
                             timerToggle = 0;
-                            if (playerTurn >= playerCount - 1) {
+                            if (playerTurn >= players.length - 1) {
                                 playerTurn = 0;
                             }
                         }
@@ -217,19 +217,16 @@
         })
 
         function KickCurrentPlayer(late=false){
-            playerCount--;
             
-            if (playerCount == 1) {
+            if (players.length == 1) {
                 play_sound("victory1");
                 
                 show_modal("player_win");
-            }
-            else if (late == true) {
+            } else if (late == true) {
                 play_sound("doge5");
 
                 show_modal("player_late");
-            }
-            else {
+            } else {
                 // Randomize sound
                 let rand = randint(4) + 1;
                 play_sound("doge"+rand);
@@ -243,14 +240,19 @@
             //remove current player
             if(playerTurn == 0){
                 players = players.splice(1, players.length - 1);
-            }else if(playerTurn == playerCount){
+            } else if(playerTurn == players.length - 1){
                 players = players.splice(0, players.length - 1);
-            }else{
+            } else {
                 players = players
                     .splice(0, playerTurn) //players behind
                     .concat(
                         players.splice( playerTurn + 1, players.length - ( playerTurn + 1 ) ) //players in front
                     )
+            }
+
+            //if kicked player is the last player in the queue, go to first player in the queue
+            if(playerTurn == players.length){
+                playerTurn = 0;
             }
         }
 
