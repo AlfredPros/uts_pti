@@ -17,6 +17,12 @@
   text-shadow: #828282 !important;
 }
 
+.boxplayer{
+  background-color: #f3cf9c;
+  border-radius: 20%;
+
+}
+
 @font-face {
     font-family: "Aller" ;
     src: url(resources/Aller.ttf);
