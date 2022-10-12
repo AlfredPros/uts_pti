@@ -1,4 +1,4 @@
-let num = playerCount;  // 4
+let num = players.length;  // 4
 let spacing = 1.0 / num;
 let temp = "";
 let id = 0;
@@ -110,15 +110,26 @@ function safer_boners_selected() {
         win = true;
         show_modal("player_tied");
         play_sound("victory2");
-    }
-    else {
+    } else {
         // Time restarts
         seconds = 9;
         miliSeconds = 99;
-
+        
         // Randomize sound
         let rand = randint(4) + 1;
         play_sound("bone"+rand);
+
+        //next player's turn
+        next_player_turn();
     }
 
 }
+
+function next_player_turn(){
+    if(playerTurn == players.length - 1){
+        playerTurn = 0;
+    }else{
+        playerTurn++;
+    }
+}
+
