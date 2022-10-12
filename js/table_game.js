@@ -38,7 +38,7 @@ for (let i = 0; i < num + 2; i++) {
                 if (dangerous_boners.includes(id)) {
                     temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.playerTurn++; this.hidden=true " style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
                 }
                 id++;
             }
@@ -48,7 +48,7 @@ for (let i = 0; i < num + 2; i++) {
                 if (dangerous_boners.includes(id)) {
                     temp += '<td> <img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/> </td>';
                 } else {
-                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/> </td>';
+                    temp += '<td> <img class="safer_boners" src="resources/bone.png" onclick="this.playerTurn++; this.hidden=true " style="width:100%; cursor:pointer;" id="bone' + id + '"/> </td>';
                 }
                 id++;
             }
@@ -61,7 +61,7 @@ for (let i = 0; i < num + 2; i++) {
                 if (dangerous_boners.includes(id)) {
                     temp += '<img class="dangerous_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
                 } else {
-                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
+                    temp += '<img class="safer_boners" src="resources/bone.png" onclick="this.playerTurn++; this.hidden=true" style="width:100%; cursor:pointer;" id="bone' + id + '"/>';
                 }
                 id++;
             }
@@ -115,6 +115,7 @@ function safer_boners_selected() {
         // Time restarts
         seconds = 9;
         miliSeconds = 99;
+        
 
         // Randomize sound
         let rand = randint(4) + 1;
