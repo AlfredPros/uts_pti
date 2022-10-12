@@ -19,23 +19,24 @@
 
         }
 
-        @media screen and (max-width: 578px) {
-            #playerList{
-                font-size: xx-small;
+        @media screen and (max-width: 579px) {
+            #judul {
+                font-size: calc(14px + 5vw);
             }
 
             #logo {
-                width: 4.5rem;
+                width: 20vw;
             }
-
-            #judul {
-                font-size: 1.8rem;
-            }
-
-            /* #player {
-                height: ;
-            } */
         }
+
+        @media screen and (max-width:488px) {
+            .myFlexContainer2 :nth-child(1) { order: 5; }
+            .myFlexContainer2 :nth-child(2) { order: 1; }
+            .myFlexContainer2 :nth-child(3) { order: 2; }
+            .myFlexContainer2 :nth-child(4) { order: 3; }
+            .myFlexContainer2 :nth-child(5) { order: 4; }
+        }
+        
     </style>
 </head>
 
@@ -46,8 +47,19 @@
             <img id="logo" class="img-fluid mx-auto my-2" src="resources/spike-logo.png" alt="SPIKE"/>
         </div>
         <hr>
-        <div class="d-flex flex-column flex-nowrap align-items-center">
-            <!-- First Player -->
+        <div class="myFlexContainer2">
+            <!-- Game Instructions -->
+            <div id="instruction">
+                <p style="text-align: center;">Game Instruction:</p>
+                <ol>
+                    <li>Each turn, different players takes a bone.</li>
+                    <li>If dangerous bone is picked, the player lose.</li>
+                    <li>If there is only one man standing, they win.</li>
+                    <li>There are only 2 to 5 players.</li>
+                    <li>Have fun!</li>
+                </ol>
+            </div>
+            <!-- Player -->
             <div id="player" class="d-flex align-items-center playerDIV">
                 <p style="padding-block:auto;" id="insertplayer"> Insert 1st Player</p>
             </div>
