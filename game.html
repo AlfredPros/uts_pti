@@ -261,7 +261,7 @@
         let insertIntoPlayerListContainer = "";
 
         for (let i = 0; i < players.length; i++) {
-            insertIntoPlayerListContainer += "<p id=\"" + players[i].name + "scoreboard\"><span>0</span>\t" + players[i].name + "</p>" ;
+            insertIntoPlayerListContainer += "<p id=\"" + players[i].name + "scoreboard\">" + players[i].name + "\t: <span>0</span></p>" ;
         }
 
         $("#player-list").append(insertIntoPlayerListContainer);
