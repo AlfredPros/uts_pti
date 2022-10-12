@@ -1,11 +1,11 @@
 
 Next to do:
-- Rotate player for each bone picked 		(Christian)				[]
+- Rotate player for each bone picked 		(Christian)				[DONE]
 - 1st player JS							 	(Greg)					[DONE]
 - make input hint darker					(Greg)					[DONE]
 - Player list box							(Greg)					[]
 - Fixed bone table height					()						[]
-- Player list and score on the left			()						[]
+- Player list and score on the left			(Christian)				[]
 - Media query 								(Loysing)				[]
 - bug test									(Alfred and others)		[]
 - Freeze images 							(Alfred)				[DONE]
